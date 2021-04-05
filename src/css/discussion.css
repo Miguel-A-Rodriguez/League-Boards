@@ -1,0 +1,78 @@
+.discussion-container {
+  position: absolute;
+  width: 100%;
+  min-width: 1000px;
+  height: 1080px;
+  z-index: -10;
+  background-color: black;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-image: url("../images/backdrop.jpg");
+  top: 0px;
+}
+
+.discussion-items-container div {
+  margin-left: 25%;
+  font-size: 32px;
+  margin-bottom: 5%;
+  background-color: white;
+  width: 50%;
+  height: 10rem;
+  border-radius: 25px;
+  background: white;
+  padding: 10px;
+}
+.discussion-headers {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin-bottom: 2rem;
+}
+.discussion-post-container {
+  display: flex;
+}
+.discussion-post-user {
+  font-size: 18px;
+  margin-left: 33%;
+  background-color: #dbdbdb;
+  width: 10%;
+  height: auto;
+  min-width: 150px;
+  padding: 1%;
+}
+.discussion-contents {
+  display: flex;
+  flex-direction: column;
+  min-width: 700px;
+}
+.discussion-post-title {
+  font-size: 18px;
+  background-color: #dbdbdb;
+  font-weight: bolder;
+  padding: 2%;
+}
+.discussion-post-date {
+  font-size: 12px;
+  background-color: #dbdbdb;
+  font-weight: bolder;
+}
+.discussion-post {
+  font-size: 18px;
+  background-color: #dbdbdb;
+  padding-bottom: 9%;
+  padding-top: 1rem;
+}
+.input-field {
+  margin-left: 33%;
+  width: 200%;
+  display: flex;
+  flex-direction: column;
+}
+.input-field input {
+  margin-top: 1rem;
+  width: 24.3%;
+}
+.input-field button {
+  width: 5%;
+  margin-left: 19.5%;
+}
