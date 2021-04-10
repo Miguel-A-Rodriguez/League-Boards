@@ -2,7 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import LogInPage from "../src/components/login-page";
 import SignUpPage from "../src/components/signup-page";
+import DashBoard from "./components/Dashboard";
 import "./css/index.css";
 import reportWebVitals from "./reportWebVitals";
 import Adc from "./routes/adc";
@@ -67,7 +69,10 @@ ReactDOM.render(
       <Route path="/support-teams" component={SupportTeams} />
       <Route path="/support-talk" component={SupportTalk} />
 
-      <Route path="/sign-up-page" component={SignUpPage} />
+      <Route path="/signup" component={SignUpPage} />
+      <Route path="/login" component={LogInPage} />
+
+      <Route path="/dashboard" component={DashBoard} />
     </Switch>
   </BrowserRouter>,
   rootElement

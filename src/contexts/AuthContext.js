@@ -12,23 +12,29 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
 
   function signup(email, password) {
-    auth.createUserWithEmailAndPassword(email, password);
+    return auth.createUserWithEmailAndPassword(email, password);
+  }
+  function login(email, password) {
+    return auth.signInWithEmailAndPassword(email, password);
   }
 
   useEffect(() => {
     //   unsubcscribe unsubscribes the listener once we unmount
     // potential extra parenthesis around user in line below due to prettier
+
     const unsubscribe = auth.onAuthStateChanged((user) => {
       setCurrentUser(user);
       setLoading(false);
     });
     return unsubscribe;
   }, []);
+
   //   empty array only runs it once
 
   const value = {
     currentUser,
     signup,
+    login,
   };
 
   return (

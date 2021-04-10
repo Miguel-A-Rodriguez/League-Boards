@@ -5,12 +5,11 @@ import { useAuth } from "../contexts/AuthContext";
 import "../css/App.css";
 import "../css/discussion.css";
 
-export default function Signup() {
+export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  console.log(useAuth());
-  const { signup } = useAuth();
+
+  const { login } = useAuth();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -18,20 +17,13 @@ export default function Signup() {
   async function handleSubmit(e) {
     e.preventDefault();
 
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      // return (
-      setError("Passwords do not match");
-      console.log("passwords did not match");
-      return;
-      // );
-    }
-
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/dashboard");
     } catch {
-      setError("Failed to create an account");
+      setError("Failed to Login");
     }
 
     setLoading(false);
@@ -43,7 +35,7 @@ export default function Signup() {
     <>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4 ">Sign up</h2>
+          <h2 className="text-center mb-4 ">Log In</h2>
 
           {error && <div style={{ color: "red" }}>{error}</div>}
           <Form onSubmit={handleSubmit}>
@@ -55,21 +47,15 @@ export default function Signup() {
               <Form.Label id="password">Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-            <Form.Group>
-              <Form.Label id="password-confirm">
-                Password Confirmation
-              </Form.Label>
-              <Form.Control type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
+
             <Button disabled={loading} className="sign-up-button" type="submit">
-              Sign Up
+              Login
             </Button>
           </Form>
         </Card.Body>
-        <Link to="/login">
-          <div className="w-50 text-center ">
-            Already have an account? Log in
-          </div>
+        <Link to="/signup">
+          {" "}
+          <div className="w-50 text-center ">Need an account? Sign up</div>{" "}
         </Link>
       </Card>
     </>

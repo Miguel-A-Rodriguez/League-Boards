@@ -25,7 +25,7 @@ function Home() {
                   <img src={Logo} alt="" />
                 </div>
               </nav>
-              <Link to="/sign-up-page">
+              <Link to="/signup">
                 <div
                   className="sign-up-link"
                   style={{
