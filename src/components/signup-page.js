@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "react-bootstrap";
 import Signup from "../components/signup";
-import { AuthProvider } from "../contexts/AuthContext";
 import "../css/App.css";
 import "../css/discussion.css";
+
 function SignUpPage() {
   return (
     <Container
@@ -11,9 +11,7 @@ function SignUpPage() {
       style={{ minheight: "100vh" }}
     >
       <div className="w-100" style={{ maxWidth: "400px" }}>
-        <AuthProvider>
-          <Signup />
-        </AuthProvider>
+        <Signup />
       </div>
     </Container>
   );

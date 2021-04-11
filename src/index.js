@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LogInPage from "../src/components/login-page";
 import SignUpPage from "../src/components/signup-page";
+import { AuthProvider } from "../src/contexts/AuthContext";
 import DashBoard from "./components/Dashboard";
 import "./css/index.css";
 import reportWebVitals from "./reportWebVitals";
@@ -38,41 +39,43 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/top" component={Top} />
-      <Route path="/mid" component={Mid} />
-      <Route path="/jungle" component={Jungle} />
-      <Route path="/adc" component={Adc} />
-      <Route path="/support" component={Support} />
-      <Route path="/top-matchups" component={TopMatchups} />
-      <Route path="/top-builds" component={TopBuilds} />
-      <Route path="/top-teams" component={TopTeams} />
-      <Route path="/top-talk" component={TopTalk} />
+      <AuthProvider>
+        <Route exact path="/" component={Home} />
+        <Route path="/top" component={Top} />
+        <Route path="/mid" component={Mid} />
+        <Route path="/jungle" component={Jungle} />
+        <Route path="/adc" component={Adc} />
+        <Route path="/support" component={Support} />
+        <Route path="/top-matchups" component={TopMatchups} />
+        <Route path="/top-builds" component={TopBuilds} />
+        <Route path="/top-teams" component={TopTeams} />
+        <Route path="/top-talk" component={TopTalk} />
 
-      <Route path="/mid-matchups" component={MidMatchups} />
-      <Route path="/mid-builds" component={MidBuilds} />
-      <Route path="/mid-teams" component={MidTeams} />
-      <Route path="/mid-talk" component={MidTalk} />
+        <Route path="/mid-matchups" component={MidMatchups} />
+        <Route path="/mid-builds" component={MidBuilds} />
+        <Route path="/mid-teams" component={MidTeams} />
+        <Route path="/mid-talk" component={MidTalk} />
 
-      <Route path="/jungle-matchups" component={JungleMatchups} />
-      <Route path="/jungle-builds" component={JungleBuilds} />
-      <Route path="/jungle-teams" component={JungleTeams} />
-      <Route path="/jungle-talk" component={JungleTalk} />
+        <Route path="/jungle-matchups" component={JungleMatchups} />
+        <Route path="/jungle-builds" component={JungleBuilds} />
+        <Route path="/jungle-teams" component={JungleTeams} />
+        <Route path="/jungle-talk" component={JungleTalk} />
 
-      <Route path="/adc-matchups" component={AdcMatchups} />
-      <Route path="/adc-builds" component={AdcBuilds} />
-      <Route path="/adc-teams" component={AdcTeams} />
-      <Route path="/adc-talk" component={AdcTalk} />
+        <Route path="/adc-matchups" component={AdcMatchups} />
+        <Route path="/adc-builds" component={AdcBuilds} />
+        <Route path="/adc-teams" component={AdcTeams} />
+        <Route path="/adc-talk" component={AdcTalk} />
 
-      <Route path="/support-matchups" component={SupportMatchups} />
-      <Route path="/support-builds" component={SupportBuilds} />
-      <Route path="/support-teams" component={SupportTeams} />
-      <Route path="/support-talk" component={SupportTalk} />
+        <Route path="/support-matchups" component={SupportMatchups} />
+        <Route path="/support-builds" component={SupportBuilds} />
+        <Route path="/support-teams" component={SupportTeams} />
+        <Route path="/support-talk" component={SupportTalk} />
 
-      <Route path="/signup" component={SignUpPage} />
-      <Route path="/login" component={LogInPage} />
+        <Route path="/signup" component={SignUpPage} />
+        <Route path="/login" component={LogInPage} />
 
-      <Route path="/dashboard" component={DashBoard} />
+        <Route path="/dashboard" component={DashBoard} />
+      </AuthProvider>
     </Switch>
   </BrowserRouter>,
   rootElement
