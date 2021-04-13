@@ -18,6 +18,13 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   }
 
+  function logout() {
+    return auth.signOut();
+  }
+
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
   useEffect(() => {
     //   unsubcscribe unsubscribes the listener once we unmount
     // potential extra parenthesis around user in line below due to prettier
@@ -35,6 +42,8 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     login,
+    logout,
+    resetPassword,
   };
 
   return (

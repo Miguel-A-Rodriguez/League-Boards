@@ -1,12 +1,23 @@
 import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function DashBoard() {
   const [error, setError] = useState("");
-  const { currentUser } = useAuth();
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
 
-  function handleLogout() {}
+  async function handleLogout() {
+    setError("");
+
+    try {
+      await logout();
+      history.push("/login");
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
   return (
     <>
@@ -16,6 +27,9 @@ export default function DashBoard() {
           {error && <div style={{ color: "red" }}>{error}</div>}
           <strong>Email:</strong>
           {currentUser.email}
+          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+            Update Profile
+          </Link>
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">

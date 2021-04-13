@@ -2,10 +2,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ForgotPassword from "../src/components/ForgotPassword";
 import LogInPage from "../src/components/login-page";
 import SignUpPage from "../src/components/signup-page";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import DashBoard from "./components/Dashboard";
+import PrivateRoute from "./components/PrivateRoute";
 import "./css/index.css";
 import reportWebVitals from "./reportWebVitals";
 import Adc from "./routes/adc";
@@ -34,7 +36,6 @@ import TopBuilds from "./routes/top-builds";
 import TopMatchups from "./routes/top-matchups";
 import TopTalk from "./routes/top-talk";
 import TopTeams from "./routes/top-teams";
-
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
@@ -73,8 +74,8 @@ ReactDOM.render(
 
         <Route path="/signup" component={SignUpPage} />
         <Route path="/login" component={LogInPage} />
-
-        <Route path="/dashboard" component={DashBoard} />
+        <Route path="/forgot-password" component={ForgotPassword} />
+        <PrivateRoute path="/dashboard" component={DashBoard} />
       </AuthProvider>
     </Switch>
   </BrowserRouter>,
