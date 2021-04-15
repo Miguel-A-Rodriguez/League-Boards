@@ -37,6 +37,7 @@ export default function ForgotPassword() {
           <h2 className="text-center mb-4 ">Password Reset</h2>
 
           {error && <div style={{ color: "red" }}>{error}</div>}
+          {message && <div style={{ color: "green" }}>{message}</div>}
           <Form onSubmit={handleSubmit}>
             <Form.Group>
               <Form.Label id="email">Email</Form.Label>

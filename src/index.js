@@ -8,6 +8,7 @@ import SignUpPage from "../src/components/signup-page";
 import { AuthProvider } from "../src/contexts/AuthContext";
 import DashBoard from "./components/Dashboard";
 import PrivateRoute from "./components/PrivateRoute";
+import UpdateProfile from "./components/UpdateProfile";
 import "./css/index.css";
 import reportWebVitals from "./reportWebVitals";
 import Adc from "./routes/adc";
@@ -36,6 +37,7 @@ import TopBuilds from "./routes/top-builds";
 import TopMatchups from "./routes/top-matchups";
 import TopTalk from "./routes/top-talk";
 import TopTeams from "./routes/top-teams";
+
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <BrowserRouter>
@@ -76,6 +78,7 @@ ReactDOM.render(
         <Route path="/login" component={LogInPage} />
         <Route path="/forgot-password" component={ForgotPassword} />
         <PrivateRoute path="/dashboard" component={DashBoard} />
+        <PrivateRoute path="/update-profile" component={UpdateProfile} />
       </AuthProvider>
     </Switch>
   </BrowserRouter>,
