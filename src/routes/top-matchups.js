@@ -1,11 +1,21 @@
-import React from "react";
 //import img from './images';//
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import "../css/App.css";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
 function TopMatchups() {
+  const { currentUser } = useAuth();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const inputRef = useRef();
+
+  function focus() {
+    inputRef.current.focus();
+  }
+
   return (
     <>
       <html lang="en">
@@ -31,21 +41,41 @@ function TopMatchups() {
               </nav>
             </header>
             <section className="discussion-headers">
-              <div>Recent Posts</div>
+              <div>Top Matchups</div>
             </section>
             <article className="discussion-post-container">
               <div className="discussion-post-user">
-                User <br /> Avatar
-              </div>
-              <section className="discussion-contents">
-                <div className="discussion-post-title">Post Title</div>
+                {currentUser.email}
                 <div className="discussion-post-date">Date</div>
-                <span className="discussion-post">Discussion Post</span>
+              </div>
+
+              <section className="discussion-contents">
+                <div className="discussion-post-title">{title}</div>
+
+                <span className="discussion-post">{content}</span>
               </section>
             </article>
             <div className="input-field">
-              <input type="text" />
-              <button>Post new thread</button>
+              <input
+                ref={inputRef}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                id="thread-title"
+                type="text"
+              />
+              <button id="new-title" onClick={focus}>
+                Post new thread Title
+              </button>
+              <input
+                id="thread-field"
+                type="text"
+                ref={inputRef}
+                value={content}
+                onChange={(e) => setContent(e.target.value)}
+              />
+              <button id="new-thread" type="submit" onClick={focus}>
+                Post new thread Content
+              </button>
             </div>
             <div></div>
           </div>
