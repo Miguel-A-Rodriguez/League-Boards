@@ -1,6 +1,7 @@
 //import img from './images';//
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import DateTime from "../components/DateTime";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/App.css";
 import "../css/discussion.css";
@@ -46,7 +47,9 @@ function TopMatchups() {
             <article className="discussion-post-container">
               <div className="discussion-post-user">
                 {currentUser.email}
-                <div className="discussion-post-date">Date</div>
+                <div className="discussion-post-date">
+                  <DateTime></DateTime>
+                </div>
               </div>
 
               <section className="discussion-contents">
