@@ -1,5 +1,6 @@
 //import img from './images';//
-import React, { useRef, useState } from "react";
+import React from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import DateTime from "../components/DateTime";
 import { useAuth } from "../contexts/AuthContext";
@@ -9,14 +10,8 @@ import Logo from "../images/logo.jpg";
 
 function TopMatchups() {
   const { currentUser } = useAuth();
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
-  const inputRef = useRef();
-
-  function focus() {
-    inputRef.current.focus();
-  }
-
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
   return (
     <>
       <html lang="en">
@@ -53,33 +48,31 @@ function TopMatchups() {
               </div>
 
               <section className="discussion-contents">
-                <div className="discussion-post-title">{title}</div>
+                <div className="discussion-post-title">title</div>
 
-                <span className="discussion-post">{content}</span>
+                <span className="discussion-post">content</span>
               </section>
             </article>
-            <div className="input-field">
+            <form className="input-field" onSubmit={handleSubmit(onSubmit)}>
               <input
-                ref={inputRef}
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                id="thread-title"
                 type="text"
+                placeholder="Input Your Title"
+                name="title"
+                {...register("title", {
+                  required: true,
+                })}
               />
-              <button id="new-title" onClick={focus}>
-                Post new thread Title
-              </button>
+
               <input
-                id="thread-field"
                 type="text"
-                ref={inputRef}
-                value={content}
-                onChange={(e) => setContent(e.target.value)}
+                placeholder="Input Your Content"
+                name="content"
+                {...register("content", {
+                  required: true,
+                })}
               />
-              <button id="new-thread" type="submit" onClick={focus}>
-                Post new thread Content
-              </button>
-            </div>
+              <input type="submit" />
+            </form>
             <div></div>
           </div>
         </body>
