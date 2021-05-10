@@ -4,10 +4,10 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import DateTime from "../components/DateTime";
 import { useAuth } from "../contexts/AuthContext";
+import CreateThread from "../crud-components/CreateThread";
 import "../css/App.css";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
-
 function TopMatchups() {
   const { currentUser } = useAuth();
   const { register, handleSubmit } = useForm();
@@ -53,7 +53,8 @@ function TopMatchups() {
                 <span className="discussion-post">content</span>
               </section>
             </article>
-            <form className="input-field" onSubmit={handleSubmit(onSubmit)}>
+            <CreateThread />
+            {/* <form className="input-field" onSubmit={handleSubmit(onSubmit)}>
               <input
                 type="text"
                 placeholder="Input Your Title"
@@ -72,7 +73,7 @@ function TopMatchups() {
                 })}
               />
               <input type="submit" />
-            </form>
+            </form> */}
             <div></div>
           </div>
         </body>
