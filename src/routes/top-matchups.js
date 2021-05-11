@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import DateTime from "../components/DateTime";
 import { useAuth } from "../contexts/AuthContext";
 import CreateThread from "../crud-components/CreateThread";
+import ReadData from "../crud-components/ReadData";
 import "../css/App.css";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
@@ -48,8 +49,10 @@ function TopMatchups() {
               </div>
 
               <section className="discussion-contents">
-                <div className="discussion-post-title">title</div>
-
+                <div className="discussion-post-title">
+                  <ReadData />
+                </div>
+                {/* <ReadData /> */}
                 <span className="discussion-post">content</span>
               </section>
             </article>
