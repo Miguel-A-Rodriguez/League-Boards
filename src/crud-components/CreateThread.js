@@ -1,35 +1,50 @@
 import firebase from "firebase";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useAuth } from "../contexts/AuthContext";
+// import { useAuth } from "../contexts/AuthContext";
 export default function CreateThread() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const { currentUser } = useAuth();
+  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  const [date, setDate] = useState(new Date());
 
-  // var app = firebase.initializeApp({});
-  // const handleOnChange = (e) => {
-  //   setTitle(e.target.value);
-  //   setContent(e.target.value);
-  // };
+  useEffect(() => {
+    const timer = setInterval(() => setDate(new Date()), 1000);
+    return function cleanup() {
+      clearInterval(timer);
+    };
+  });
+  // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const createPost = () => {
     const postRef = firebase.database().ref("Post");
     const post = {
       title,
       content,
+      date: date.toLocaleDateString(),
+      email: currentUser.email,
     };
+    console.log(date);
     postRef.push(post);
   };
   return (
-    <div>
-      <input
-        type="text"
-        onChange={(event) => setTitle(event.target.value)}
-        value={title}
-      />
-      <input
-        type="text"
-        onChange={(event) => setContent(event.target.value)}
-        value={content}
-      />
-      <button onClick={createPost}>Add post</button>
-    </div>
+    <>
+      <div>
+        <input
+          type="text"
+          onChange={(event) => setTitle(event.target.value)}
+          value={title}
+        />
+
+        <input
+          type="text"
+          onChange={(event) => setContent(event.target.value)}
+          value={content}
+        />
+        <button id="post-button" onClick={createPost}>
+          Add post
+        </button>
+      </div>
+    </>
   );
 }
