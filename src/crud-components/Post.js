@@ -16,6 +16,7 @@ export default function Post({ post }) {
     const postRef = firebase.database().ref("Post").child(post.id);
     postRef.remove();
   };
+
   return (
     <>
       <div>
@@ -26,13 +27,13 @@ export default function Post({ post }) {
       </div>
       <button
         className={currentUser.email !== post?.email ? "hidden" : "!hidden"}
-        onClick={deletePost}
+        onClick={currentUser.email !== post?.email ? { deletePost } : null}
       >
         Delete
       </button>
       <button
         className={currentUser.email !== post?.email ? "hidden" : "!hidden"}
-        onClick={updatePost}
+        onClick={currentUser.email !== post?.email ? { updatePost } : null}
       >
         Edit
       </button>
