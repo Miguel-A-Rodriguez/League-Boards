@@ -11,9 +11,23 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  function signup(email, password) {
+  function signup(email, password, displayName) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
+  // solution for displayName not working
+  //   firebase.auth().createUserWithEmailAndPassword(email, password)
+  // .then(function(result) {
+  //   return result.user.updateProfile({
+  //     displayName: document.getElementById("name").value
+  //   })
+  // }).catch(function(error) {
+  //   console.log(error);
+  // });
+
+  // I believe this user.updateProfile() isn't a function there.
+  // It should be const user = firebase.auth().currentUser;
+  // and then you can call .updateProfile() on the user.
+
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
   }
@@ -49,6 +63,7 @@ export function AuthProvider({ children }) {
 
   const value = {
     currentUser,
+    // displayName,
     signup,
     login,
     logout,

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Card } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import Logo from "../images/logo.jpg";
 
 export default function DashBoard() {
   const [error, setError] = useState("");
@@ -21,6 +22,11 @@ export default function DashBoard() {
 
   return (
     <>
+      <Link to="/">
+        <div class="home-logo">
+          <img style={{ height: 100 }} src={Logo} alt="" />
+        </div>
+      </Link>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4 ">Profile</h2>

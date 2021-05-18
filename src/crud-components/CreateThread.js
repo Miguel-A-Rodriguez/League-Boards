@@ -23,6 +23,7 @@ export default function CreateThread() {
       content,
       date: date.toLocaleDateString(),
       email: currentUser.email,
+      displayName: currentUser.displayName,
     };
     console.log(date);
     postRef.push(post);

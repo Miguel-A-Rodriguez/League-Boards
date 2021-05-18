@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import React, { useRef, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
@@ -7,10 +8,12 @@ import "../css/discussion.css";
 
 export default function Signup() {
   const emailRef = useRef();
+  // const displayNameRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   console.log(useAuth());
   const { signup } = useAuth();
+  const displayNameRef = useRef();
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const history = useHistory();
@@ -29,7 +32,12 @@ export default function Signup() {
     try {
       setError("");
       setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
+      await signup(
+        emailRef.current.value,
+        // displayNameRef.current.value,
+        passwordRef.current.value
+      );
+      await updateDisplayName();
       history.push("/dashboard");
     } catch {
       setError("Failed to create an account");
@@ -40,6 +48,22 @@ export default function Signup() {
 
   console.log(typeof error);
 
+  // ~~~~~~~~~~~update DisplayName on submit  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  function updateDisplayName() {
+    const user = firebase.auth().currentUser;
+
+    user
+      .updateProfile({
+        displayName: displayNameRef.current.value,
+      })
+      .then(function () {
+        console.log("succeded in making name!");
+      })
+      .catch(function (error) {
+        console.log("DisplayName failed to update");
+      });
+  }
+
   return (
     <>
       <Card>
@@ -49,6 +73,13 @@ export default function Signup() {
           {error && <div style={{ color: "red" }}>{error}</div>}
           <Form onSubmit={handleSubmit}>
             <Form.Group>
+              <Form.Label id="text">DisplayName</Form.Label>
+              <Form.Control
+                type="text"
+                id="displayName"
+                ref={displayNameRef}
+                required
+              />
               <Form.Label id="email">Email</Form.Label>
               <Form.Control type="email" ref={emailRef} required />
             </Form.Group>
