@@ -3,7 +3,6 @@ import React, { useRef, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import "../css/App.css";
 import "../css/discussion.css";
 
 export default function Signup() {

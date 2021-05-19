@@ -3,7 +3,6 @@
 import { Link } from "react-router-dom";
 import CreateThread from "../crud-components/CreateThread";
 import ReadData from "../crud-components/ReadData";
-import "../css/App.css";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 

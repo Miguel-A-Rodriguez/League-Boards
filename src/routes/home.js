@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../css/App.css";
 import "../css/discussion.css";
+import "../css/home.css";
 import Logo from "../images/logo.jpg";
-
 function Home() {
   return (
     <>
@@ -37,6 +36,20 @@ function Home() {
                   }}
                 >
                   Sign Up/Login
+                </div>
+              </Link>
+              <Link to="/dashboard">
+                <div
+                  className="sign-up-link"
+                  style={{
+                    color: "white",
+                    marginTop: "1rem",
+                    marginRight: "1rem",
+                    fontSize: "18px",
+                    fontWeight: "bolder",
+                  }}
+                >
+                  Dashboard
                 </div>
               </Link>
             </header>

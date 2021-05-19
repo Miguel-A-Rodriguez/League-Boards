@@ -2,8 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import "../css/App.css";
-import "../css/discussion.css";
+import Logo from "../images/logo.jpg";
 
 export default function UpdateProfile() {
   const emailRef = useRef();
@@ -46,6 +45,11 @@ export default function UpdateProfile() {
 
   return (
     <>
+      <Link to="/">
+        <div class="home-logo">
+          <img style={{ height: 100 }} src={Logo} alt="" />
+        </div>
+      </Link>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4 ">Update Profile</h2>
