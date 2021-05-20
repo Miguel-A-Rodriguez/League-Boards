@@ -50,7 +50,7 @@ export default function UpdateProfile() {
           <img style={{ height: 100 }} src={Logo} alt="" />
         </div>
       </Link>
-      <Card>
+      <Card style={{ width: 500 }}>
         <Card.Body>
           <h2 className="text-center mb-4 ">Update Profile</h2>
 

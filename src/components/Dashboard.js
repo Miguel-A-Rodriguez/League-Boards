@@ -19,6 +19,18 @@ export default function DashBoard() {
       setError("Failed to log out");
     }
   }
+  // colors
+  const bgColors = {
+    Default: "#81b71a",
+    Blue: "#00B1E1",
+    Cyan: "#37BC9B",
+    Green: "#8CC152",
+    Red: "#E9573F",
+    Yellow: "#F6BB42",
+  };
+  const styleObj = {
+    fontSize: 28,
+  };
 
   return (
     <>
@@ -31,18 +43,24 @@ export default function DashBoard() {
         <Card.Body>
           <h2 className="text-center mb-4 ">Profile</h2>
           {error && <div style={{ color: "red" }}>{error}</div>}
-          <strong>Email:</strong>
-          {currentUser.email}
-          <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-            Update Profile
-          </Link>
+
+          <div className="w-100 text-center mt-2" style={styleObj}>
+            <strong>Email:</strong>
+            <br />
+            {currentUser.email}
+          </div>
+          <div className="w-100 text-center mt-2">
+            <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
+              Update Profile
+            </Link>
+          </div>
+          <div className="w-100 text-center mt-2">
+            <Button variant="Link" onClick={handleLogout}>
+              Logout
+            </Button>
+          </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
-        <Button variant="Link" onClick={handleLogout}>
-          Logout
-        </Button>
-      </div>
     </>
   );
 }

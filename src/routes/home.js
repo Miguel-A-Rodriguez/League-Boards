@@ -38,21 +38,10 @@ function Home() {
                   Sign Up/Login
                 </div>
               </Link>
-              <Link to="/dashboard">
-                <div
-                  className="sign-up-link"
-                  style={{
-                    color: "white",
-                    marginTop: "1rem",
-                    marginRight: "1rem",
-                    fontSize: "18px",
-                    fontWeight: "bolder",
-                  }}
-                >
-                  Dashboard
-                </div>
-              </Link>
             </header>
+            <Link to="/dashboard">
+              <div className="dashboard-link">Dashboard</div>
+            </Link>
             <section className="home-items-container">
               <Link to="./top">
                 <div>Top</div>
