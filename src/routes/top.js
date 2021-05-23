@@ -2,6 +2,7 @@ import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
 import "../css/discussion.css";
+import "../css/thread.css";
 import Logo from "../images/logo.jpg";
 
 function Top() {
@@ -18,38 +19,30 @@ function Top() {
           <title>LOLjp.gg</title>
         </head>
         <body>
-          <div className="discussion-container">
-            <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
-            <section className="discussion-items-container">
-              <Link to="top-matchups">
-                <div className="discussion-items-container__matchups">
-                  Top Matchups
+          <div className="thread-container">
+            <nav>
+              {/* need onlick for this div to be the home button  */}
+              <Link to="/">
+                <div>
+                  <img src={Logo} alt="" />
                 </div>
               </Link>
-              <Link to="top-builds">
-                <div className="discussion-items-container__builds">
-                  Top Champion Builds
-                </div>
-              </Link>
-              <Link to="top-teams">
-                <div className="discussion-items-container__team">
-                  Top Looking For Team
-                </div>
-              </Link>
-              <Link to="top-talk">
-                <div className="discussion-items-container__talk">
-                  Top Free Talk
-                </div>
-              </Link>
+            </nav>
+            <section className="thread-items-container">
+              <ul>
+                <li>
+                  <Link to="top-matchups">Top Matchups</Link>
+                </li>
+                <li>
+                  <Link to="top-builds">Top Champion Builds</Link>
+                </li>
+                <li>
+                  <Link to="top-teams">Top Looking For Team</Link>
+                </li>
+                <li>
+                  <Link to="top-talk">Top Free Talk</Link>
+                </li>
+              </ul>
             </section>
           </div>
         </body>

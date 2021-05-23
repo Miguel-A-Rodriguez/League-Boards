@@ -21,30 +21,25 @@ function TopMatchups() {
         </head>
         <body>
           <div className="discussion-container">
-            <header>
-              <nav>
-                <Link to="/">
-                  <div class="home-logo">
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
+            <nav>
+              <Link to="/">
+                <div class="home-logo">
+                  <img src={Logo} alt="" />
+                </div>
+              </Link>
+            </nav>
+
             <section className="discussion-headers">
               <div>Top Matchups</div>
             </section>
             <article className="discussion-post-container">
-              <section className="discussion-contents">
-                <div id="title-content" className="discussion-post-title">
-                  <ReadData />
+              <section>
+                <ReadData />
+                <div>
+                  <CreateThread />
                 </div>
-                {/* <ReadData /> */}
-
-                <CreateThread />
               </section>
             </article>
-
-            <div></div>
           </div>
         </body>
       </html>

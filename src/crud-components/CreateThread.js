@@ -1,6 +1,7 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
+import "../css/discussion.css";
 // import { useAuth } from "../contexts/AuthContext";
 export default function CreateThread() {
   const [title, setTitle] = useState("");
@@ -30,7 +31,7 @@ export default function CreateThread() {
   };
   return (
     <>
-      <div>
+      <div className="post-creation-items">
         <input
           type="text"
           onChange={(event) => setTitle(event.target.value)}

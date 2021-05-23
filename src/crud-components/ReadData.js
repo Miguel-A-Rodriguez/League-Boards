@@ -2,6 +2,8 @@ import firebase from "firebase";
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../contexts/AuthContext";
 import Post from "../crud-components/Post";
+import "../css/discussion.css";
+
 export default function ReadData() {
   const [postList, setPostList] = useState();
   const { currentUser } = useAuth();

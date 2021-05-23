@@ -20,14 +20,7 @@ export default function DashBoard() {
     }
   }
   // colors
-  const bgColors = {
-    Default: "#81b71a",
-    Blue: "#00B1E1",
-    Cyan: "#37BC9B",
-    Green: "#8CC152",
-    Red: "#E9573F",
-    Yellow: "#F6BB42",
-  };
+
   const styleObj = {
     fontSize: 28,
   };

@@ -1,6 +1,8 @@
 import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
+import CreateThread from "../crud-components/CreateThread";
+import ReadData from "../crud-components/ReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -9,7 +11,7 @@ function TopBuilds() {
     <>
       <html lang="en">
         <head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
           <meta
             name="viewport"
@@ -19,21 +21,24 @@ function TopBuilds() {
         </head>
         <body>
           <div className="discussion-container">
-            <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
-            <section>
-              <div>Recent Posts</div>
+            <nav>
+              <Link to="/">
+                <div class="home-logo">
+                  <img src={Logo} alt="" />
+                </div>
+              </Link>
+            </nav>
+
+            <section className="discussion-headers">
+              <div>Top Builds</div>
             </section>
-            <article>
-              <input type="text" />
+            <article className="discussion-post-container">
+              <section>
+                <ReadData />
+                <div>
+                  <CreateThread />
+                </div>
+              </section>
             </article>
           </div>
         </body>

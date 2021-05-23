@@ -1,84 +1,60 @@
-.discussion-container {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  background-position: top center;
-  background-repeat: no-repeat;
-  background-image: url("../images/backdrop.jpg");
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
-.discussion-items-container div {
-  margin-left: 25%;
-  font-size: 32px;
-  margin-bottom: 5%;
-  background-color: white;
-  width: 50%;
-  height: 10rem;
-  border-radius: 25px;
-  background: white;
-  padding: 10px;
+.discussion-container {
+  /* position: absolute; */
+  /* width: 100vw; */
+  /* height: 100vh; */
+  /* background-position: top center; */
+  background-repeat: no-repeat;
+  background-image: url("../images/backdrop.jpg");
+  background-size: cover;
 }
+
+/* page title */
 .discussion-headers {
   text-align: center;
   font-size: 24px;
   color: white;
   margin-bottom: 2rem;
 }
+
+/* actual post text and delete/update buttons */
 .discussion-post-container {
   display: flex;
+  justify-content: center;
 }
-.discussion-post-user {
-  font-size: 18px;
-  margin-left: 33%;
-  background-color: #dbdbdb;
-  width: 10%;
-  min-width: 20rem;
-  height: auto;
 
-  padding: 1%;
-}
-.discussion-contents {
-  display: flex;
-  flex-direction: column;
-  min-width: 700px;
-  width: 40vw;
-}
-.discussion-post-title {
-  font-size: 18px;
+.post-contents {
+  margin-bottom: 5%;
   background-color: #dbdbdb;
-  font-weight: bolder;
-  padding: 2%;
-  padding-top: 1%;
-  width: 40vw;
-  word-wrap: break-word;
+  padding: 3%;
+  border-radius: 25px;
+  word-break: break-word;
+  max-width: 600px;
 }
-.discussion-post-date {
-  font-size: 12px;
-  background-color: #dbdbdb;
-  font-weight: bolder;
-}
-.discussion-post {
-  font-size: 18px;
-  background-color: #dbdbdb;
-  padding-bottom: 2%;
-  padding-right: 2%;
-  padding-left: 2%;
-  padding-top: 1%;
-  width: 40vw;
-  word-wrap: break-word;
-}
-.input-field {
-  margin-left: 33%;
-  width: 206vw;
-  display: flex;
-  flex-direction: column;
-}
-.input-field input {
+.post-contents button {
+  border-radius: 50px;
+  margin-right: 10px;
   margin-top: 1rem;
-  width: 24.3%;
 }
-.input-field button {
-  width: 5%;
-  margin-left: 19.3%;
+
+/* input fields and add post button */
+.post-creation-items {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2px;
+}
+.post-creation-items input {
+  border-radius: 5px;
+}
+.post-creation-items button {
+  margin-bottom: 5%;
+  border-radius: 50px;
+  margin-top: 10px;
 }
