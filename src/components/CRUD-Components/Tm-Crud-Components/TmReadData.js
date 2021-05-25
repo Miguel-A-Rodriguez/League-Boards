@@ -1,8 +1,8 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
-import Post from "../crud-components/Post";
-import "../css/discussion.css";
+import { useAuth } from "../../../contexts/AuthContext";
+import "../../../css/discussion.css";
+import TmPost from "./TmPost";
 
 export default function ReadData() {
   const [postList, setPostList] = useState();
@@ -10,7 +10,7 @@ export default function ReadData() {
   useEffect(() => {
     // const createPost = () => {
     //     const postRef = firebase.database().ref("Post");
-    const postRef = firebase.database().ref("Post");
+    const postRef = firebase.database().ref("TmPost");
     postRef.on("value", (snapshot) => {
       const posts = snapshot.val();
       const postList = [];
@@ -24,7 +24,7 @@ export default function ReadData() {
   return (
     <div>
       {postList
-        ? postList.map((post, index) => <Post post={post} key={index} />)
+        ? postList.map((post, index) => <TmPost post={post} key={index} />)
         : ""}
     </div>
   );

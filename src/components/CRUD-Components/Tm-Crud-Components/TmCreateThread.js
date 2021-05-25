@@ -1,9 +1,9 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
-import "../css/discussion.css";
+import { useAuth } from "../../../contexts/AuthContext";
+import "../../../css/discussion.css";
 // import { useAuth } from "../contexts/AuthContext";
-export default function CreateThread() {
+export default function TmCreateThread() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const { currentUser } = useAuth();
@@ -18,7 +18,7 @@ export default function CreateThread() {
   });
   // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const createPost = () => {
-    const postRef = firebase.database().ref("Post");
+    const postRef = firebase.database().ref("TmPost");
     const post = {
       title,
       content,

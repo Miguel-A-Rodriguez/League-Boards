@@ -1,8 +1,8 @@
 //import img from './images';//
 
 import { Link } from "react-router-dom";
-import CreateThread from "../crud-components/CreateThread";
-import ReadData from "../crud-components/ReadData";
+import TmCreateThread from "../components/CRUD-Components/Tm-Crud-Components/TmCreateThread";
+import TmReadData from "../components/CRUD-Components/Tm-Crud-Components/TmReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -34,9 +34,9 @@ function TopMatchups() {
             </section>
             <article className="discussion-post-container">
               <section>
-                <ReadData />
+                <TmReadData />
                 <div>
-                  <CreateThread />
+                  <TmCreateThread />
                 </div>
               </section>
             </article>

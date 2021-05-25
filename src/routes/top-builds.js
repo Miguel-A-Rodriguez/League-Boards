@@ -1,8 +1,8 @@
 import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
-import CreateThread from "../crud-components/CreateThread";
-import ReadData from "../crud-components/ReadData";
+import TbCreateThread from "../components/CRUD-Components/TB-CRUD/TbCreateThread";
+import TbReadData from "../components/CRUD-Components/TB-CRUD/TbReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -34,9 +34,9 @@ function TopBuilds() {
             </section>
             <article className="discussion-post-container">
               <section>
-                <ReadData />
+                <TbReadData />
                 <div>
-                  <CreateThread />
+                  <TbCreateThread />
                 </div>
               </section>
             </article>
