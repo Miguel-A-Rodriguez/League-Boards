@@ -1,8 +1,8 @@
 //import img from './images';//
 
 import { Link } from "react-router-dom";
-import TmCreateThread from "../components/CRUD-Components/Tm-Crud-Components/TmCreateThread";
-import TmReadData from "../components/CRUD-Components/Tm-Crud-Components/TmReadData";
+import TtCreateThread from "../components/CRUD-Components/Tt-CRUD/TtCreateThread";
+import TtReadData from "../components/CRUD-Components/Tt-CRUD/TtReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -30,13 +30,13 @@ function TopTeams() {
             </nav>
 
             <section className="discussion-headers">
-              <div>Top Matchups</div>
+              <div>Top Looking for Teams</div>
             </section>
             <article className="discussion-post-container">
               <section>
-                <TmReadData />
+                <TtReadData />
                 <div>
-                  <TmCreateThread />
+                  <TtCreateThread />
                 </div>
               </section>
             </article>
