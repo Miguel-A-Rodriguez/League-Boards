@@ -1,15 +1,13 @@
 import firebase from "firebase";
 import React, { useEffect, useState } from "react";
-import { useAuth } from "../../../contexts/AuthContext";
+// import { useAuth } from "../../../contexts/AuthContext";
 import "../../../css/discussion.css";
 import TtPost from "./TtPost";
 
 export default function TtReadData() {
   const [postList, setPostList] = useState();
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
   useEffect(() => {
-    // const createPost = () => {
-    //     const postRef = firebase.database().ref("Post");
     const postRef = firebase.database().ref("TtPost");
     postRef.on("value", (snapshot) => {
       const posts = snapshot.val();

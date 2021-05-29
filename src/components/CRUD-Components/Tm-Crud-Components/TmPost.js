@@ -1,15 +1,37 @@
 import firebase from "firebase";
-import React from "react";
+import { default as React, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
-// update/delete posts
 
 export default function TmPost({ post }) {
   const { currentUser } = useAuth();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
-  const updatePost = () => {
+  //  1. How to show input fields and updateButtons onClick of edit?
+  // 2. How to update title and content seperately without making seperate title and content buttons
+  // 3. How would you start putting together a profile picture selector?
+  // My thoughts in dashboard, get 120 pictures for all Champions and upload them to the database.
+  // Select your Champion portrait in the pop-up widg.
+  // On submittion the corresponding url from the database is passed into the update profile pic
+  // method from react
+  //   if (user != null) {
+  //     user.providerData.forEach(function (profile) {
+  //       console.log("  Photo URL: " + profile.photoURL);
+  //   });
+  // }
+
+  // 4. How would you have implemented the CRUD as I have currently just copy and pasted my components
+  //   and specified them for each "thread" of the website
+
+  // 5. Could you explain whats in the read data component line by line
+  const updateTitle = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
+    postRef.update({ title });
+  };
 
-    postRef.update();
+  const updateContent = () => {
+    const postRef = firebase.database().ref("TmPost").child(post.id);
+    postRef.update({ content });
   };
 
   const deletePost = () => {
@@ -17,6 +39,15 @@ export default function TmPost({ post }) {
     postRef.remove();
   };
 
+  // const editDiv = document.getElementById("edited-text");
+  // const updateBtn = document.getElementById("update-button");
+  // const editHider = () => {
+  //   if (updateBtn.clicked === true) {
+  //     editDiv.style.display = "!hidden";
+  //   } else {
+  //     editDiv.style.display = "hidden";
+  //   }
+  // };
   return (
     <>
       {/* <button style={{ height: 200 }} onClick={user}></button> */}
@@ -24,6 +55,7 @@ export default function TmPost({ post }) {
         <h1>{post?.title}</h1>
         <h2> {post?.content}</h2>
         <h3>Posted by: {post?.displayName}</h3>
+        <h4>Posted on:</h4>
         <h5>{post?.date}</h5>
         <button
           className={
@@ -39,12 +71,32 @@ export default function TmPost({ post }) {
           className={
             currentUser.displayName !== post?.displayName ? "hidden" : "!hidden"
           }
-          onClick={
-            currentUser.displayName === post?.displayName ? updatePost : null
-          }
+          // onClick={
+
+          //   currentUser.displayName === post?.displayName ? updatePost : null
+          // }
         >
           Edit
         </button>
+        <div className="post-buttons">
+          <input
+            type="text"
+            onChange={(event) => setTitle(event.target.value)}
+            value={title}
+          />
+          <button id="update-button" onClick={updateTitle}>
+            UpdateTitle
+          </button>
+        </div>
+
+        <div class="post-buttons">
+          <input
+            type="text"
+            onChange={(event) => setContent(event.target.value)}
+            value={content}
+          />
+          <button onClick={updateContent}>Update Content</button>
+        </div>
       </div>
     </>
   );

@@ -2,8 +2,8 @@ import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
 import "../css/discussion.css";
+import "../css/thread.css";
 import Logo from "../images/logo.jpg";
-
 function Mid() {
   return (
     <>
@@ -18,7 +18,7 @@ function Mid() {
           <title>LOLjp.gg</title>
         </head>
         <body>
-          <div className="discussion-container">
+          <div className="thread-container">
             <header>
               <nav>
                 {/* need onlick for this div to be the home button  */}
@@ -29,27 +29,29 @@ function Mid() {
                 </Link>
               </nav>
             </header>
-            <section className="discussion-items-container">
-              <Link to="mid-matchups">
-                <div className="discussion-items-container__matchups">
-                  Mid Matchups
-                </div>
-              </Link>
-              <Link to="mid-builds">
-                <div className="discussion-items-container__builds">
-                  Mid Champion Builds
-                </div>
-              </Link>
-              <Link to="mid-teams">
-                <div className="discussion-items-container__team">
-                  Mid Looking For Team
-                </div>
-              </Link>
-              <Link to="mid-talk">
-                <div className="discussion-items-container__talk">
-                  Mid Free Talk
-                </div>
-              </Link>
+            <section className="thread-items-container">
+              <ul>
+                <Link to="mid-matchups">
+                  <li className="discussion-items-container__matchups">
+                    Mid Matchups
+                  </li>
+                </Link>
+                <Link to="mid-builds">
+                  <li className="discussion-items-container__builds">
+                    Mid Champion Builds
+                  </li>
+                </Link>
+                <Link to="mid-teams">
+                  <li className="discussion-items-container__team">
+                    Mid Looking For Team
+                  </li>
+                </Link>
+                <Link to="mid-talk">
+                  <li className="discussion-items-container__talk">
+                    Mid Free Talk
+                  </li>
+                </Link>
+              </ul>
             </section>
           </div>
         </body>

@@ -1,15 +1,21 @@
 import firebase from "firebase";
-import React from "react";
+import { default as React, useState } from "react";
 import { useAuth } from "../../../contexts/AuthContext";
 // update/delete posts
 
 export default function TtPost({ post }) {
   const { currentUser } = useAuth();
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
 
-  const updatePost = () => {
+  const updateTitle = () => {
     const postRef = firebase.database().ref("TtPost").child(post.id);
+    postRef.update({ title });
+  };
 
-    postRef.update();
+  const updateContent = () => {
+    const postRef = firebase.database().ref("TtPost").child(post.id);
+    postRef.update({ content });
   };
 
   const deletePost = () => {
@@ -39,12 +45,28 @@ export default function TtPost({ post }) {
           className={
             currentUser.displayName !== post?.displayName ? "hidden" : "!hidden"
           }
-          onClick={
-            currentUser.displayName === post?.displayName ? updatePost : null
-          }
+          // onClick={
+          //   currentUser.displayName === post?.displayName ? updatePost : null
+          // }
         >
           Edit
         </button>
+        <div>
+          <input
+            type="text"
+            onChange={(event) => setTitle(event.target.value)}
+            value={title}
+          />
+          <button id="update-button" onClick={updateTitle}>
+            UpdateTitle
+          </button>
+          <input
+            type="text"
+            onChange={(event) => setContent(event.target.value)}
+            value={content}
+          />
+          <button onClick={updateContent}>Update Content</button>
+        </div>
       </div>
     </>
   );
