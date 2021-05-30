@@ -6,9 +6,12 @@ export default function TmPost({ post }) {
   const { currentUser } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
-
+  const [date] = useState(new Date());
   //  1. How to show input fields and updateButtons onClick of edit?
+  // A. Make a state for the two inputs that controls the visibility, then use {isVisible && <input />} in jsx
   // 2. How to update title and content seperately without making seperate title and content buttons
+  // A. Its fine to keep as two different buttons.
+  // 2a. Updated date when someone edited by passing the date state and property/key
   // 3. How would you start putting together a profile picture selector?
   // My thoughts in dashboard, get 120 pictures for all Champions and upload them to the database.
   // Select your Champion portrait in the pop-up widg.
@@ -22,16 +25,22 @@ export default function TmPost({ post }) {
 
   // 4. How would you have implemented the CRUD as I have currently just copy and pasted my components
   //   and specified them for each "thread" of the website
+  //   Would refactor each CRUD component to be used accross the entire application
+  // (Don't repeat yourself)
 
-  // 5. Could you explain whats in the read data component line by line
+  // 5. Could you explain whats in the read data component line by line (done)
+
+  // Look into the next 2 weeks
+  // 1. Creating reuseable functions in javascript
+  // 2. Creating reuseable components in react
   const updateTitle = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
-    postRef.update({ title });
+    postRef.update({ title, date: date.toLocaleDateString() });
   };
 
   const updateContent = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
-    postRef.update({ content });
+    postRef.update({ content, date: date.toLocaleDateString() });
   };
 
   const deletePost = () => {

@@ -7,15 +7,16 @@ export default function TtPost({ post }) {
   const { currentUser } = useAuth();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const [date] = useState(new Date());
 
   const updateTitle = () => {
     const postRef = firebase.database().ref("TtPost").child(post.id);
-    postRef.update({ title });
+    postRef.update({ title, date: date.toLocaleDateString() });
   };
 
   const updateContent = () => {
     const postRef = firebase.database().ref("TtPost").child(post.id);
-    postRef.update({ content });
+    postRef.update({ content, date: date.toLocaleDateString() });
   };
 
   const deletePost = () => {

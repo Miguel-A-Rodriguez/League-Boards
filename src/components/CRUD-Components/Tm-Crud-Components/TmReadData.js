@@ -20,7 +20,10 @@ export default function ReadData() {
       setPostList(postList);
     });
   }, []);
-
+  // (post, index) are callback properties that give back the item of the array (postList)
+  // index are the numbers that correspond to each post 0 for the first 1 for the second etc
+  // stuff below is dynamic so would not need to be touched in the event of refactoring of
+  // CRUD components
   return (
     <div>
       {postList
