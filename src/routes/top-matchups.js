@@ -1,5 +1,6 @@
 //import img from './images';//
 
+import { default as React } from "react";
 import { Link } from "react-router-dom";
 import TmCreateThread from "../components/CRUD-Components/Tm-Crud-Components/TmCreateThread";
 import TmReadData from "../components/CRUD-Components/Tm-Crud-Components/TmReadData";

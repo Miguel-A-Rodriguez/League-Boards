@@ -7,10 +7,9 @@ export default function TmPost({ post }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [date] = useState(new Date());
+  const [visible, setVisible] = useState(false);
   //  1. How to show input fields and updateButtons onClick of edit?
   // A. Make a state for the two inputs that controls the visibility, then use {isVisible && <input />} in jsx
-  // 2. How to update title and content seperately without making seperate title and content buttons
-  // A. Its fine to keep as two different buttons.
   // 2a. Updated date when someone edited by passing the date state and property/key
   // 3. How would you start putting together a profile picture selector?
   // My thoughts in dashboard, get 120 pictures for all Champions and upload them to the database.
@@ -33,30 +32,38 @@ export default function TmPost({ post }) {
   // Look into the next 2 weeks
   // 1. Creating reuseable functions in javascript
   // 2. Creating reuseable components in react
+
   const updateTitle = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.update({ title, date: date.toLocaleDateString() });
+    window.location.reload();
   };
-
   const updateContent = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.update({ content, date: date.toLocaleDateString() });
+    window.location.reload();
   };
+  // const updatePost = () => {
+  //   const postRef = firebase.database().ref("TmPost").child(post.id);
+  //   if (title === "") {
+  //     return post.title;
+  //   } else {
+  //     postRef.update({ title, date: date.toLocaleDateString() });
+  //   }
+  //   if (content === "") {
+  //     return post.content;
+  //   } else {
+  //     postRef.update({ content, date: date.toLocaleDateString() });
+  //     // window.location.reload();
+  //   }
+  // };
 
   const deletePost = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.remove();
+    window.location.reload();
   };
 
-  // const editDiv = document.getElementById("edited-text");
-  // const updateBtn = document.getElementById("update-button");
-  // const editHider = () => {
-  //   if (updateBtn.clicked === true) {
-  //     editDiv.style.display = "!hidden";
-  //   } else {
-  //     editDiv.style.display = "hidden";
-  //   }
-  // };
   return (
     <>
       {/* <button style={{ height: 200 }} onClick={user}></button> */}
@@ -80,32 +87,34 @@ export default function TmPost({ post }) {
           className={
             currentUser.displayName !== post?.displayName ? "hidden" : "!hidden"
           }
-          // onClick={
-
-          //   currentUser.displayName === post?.displayName ? updatePost : null
-          // }
+          onClick={
+            currentUser.displayName === post?.displayName
+              ? () => setVisible(!visible)
+              : null
+          }
         >
           Edit
         </button>
-        <div className="post-buttons">
-          <input
-            type="text"
-            onChange={(event) => setTitle(event.target.value)}
-            value={title}
-          />
-          <button id="update-button" onClick={updateTitle}>
-            UpdateTitle
-          </button>
-        </div>
-
-        <div class="post-buttons">
-          <input
-            type="text"
-            onChange={(event) => setContent(event.target.value)}
-            value={content}
-          />
-          <button onClick={updateContent}>Update Content</button>
-        </div>
+        {visible && (
+          <>
+            <aside className="post-buttons">
+              <input
+                type="text"
+                onChange={(event) => setTitle(event.target.value)}
+                value={title}
+              />
+              <button onClick={updateTitle}>Update Title</button>
+            </aside>
+            <aside class="post-buttons">
+              <input
+                type="text"
+                onChange={(event) => setContent(event.target.value)}
+                value={content}
+              />
+              <button onClick={updateContent}>Update Post</button>
+            </aside>
+          </>
+        )}
       </div>
     </>
   );
