@@ -1,6 +1,9 @@
-import React from "react";
 //import img from './images';//
+
+import { default as React } from "react";
 import { Link } from "react-router-dom";
+import AtCreateThread from "../components/CRUD-Components/At-CRUD/AtCreateThread";
+import AtReadData from "../components/CRUD-Components/At-CRUD/AtReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -19,21 +22,24 @@ function AdcTeams() {
         </head>
         <body>
           <div className="discussion-container">
-            <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
-            <section>
-              <div>Recent Posts</div>
+            <nav>
+              <Link to="/">
+                <div class="home-logo">
+                  <img src={Logo} alt="" />
+                </div>
+              </Link>
+            </nav>
+
+            <section className="discussion-headers">
+              <div>Adc Teams</div>
             </section>
-            <article>
-              <input type="text" />
+            <article className="discussion-post-container">
+              <section>
+                <AtReadData />
+                <div>
+                  <AtCreateThread />
+                </div>
+              </section>
             </article>
           </div>
         </body>

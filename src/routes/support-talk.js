@@ -1,6 +1,8 @@
-import React from "react";
 //import img from './images';//
+
 import { Link } from "react-router-dom";
+import SdCreateThread from "../components/CRUD-Components/Sd-CRUD/SdCreateThread";
+import SdReadData from "../components/CRUD-Components/Sd-CRUD/SdReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -19,21 +21,24 @@ function SupportTalk() {
         </head>
         <body>
           <div className="discussion-container">
-            <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
-            <section>
-              <div>Recent Posts</div>
+            <nav>
+              <Link to="/">
+                <div class="home-logo">
+                  <img src={Logo} alt="" />
+                </div>
+              </Link>
+            </nav>
+
+            <section className="discussion-headers">
+              <div>Support Talk</div>
             </section>
-            <article>
-              <input type="text" />
+            <article className="discussion-post-container">
+              <section>
+                <SdReadData />
+                <div>
+                  <SdCreateThread />
+                </div>
+              </section>
             </article>
           </div>
         </body>

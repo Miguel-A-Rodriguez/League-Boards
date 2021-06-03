@@ -8,30 +8,6 @@ export default function TmPost({ post }) {
   const [content, setContent] = useState("");
   const [date] = useState(new Date());
   const [visible, setVisible] = useState(false);
-  //  1. How to show input fields and updateButtons onClick of edit?
-  // A. Make a state for the two inputs that controls the visibility, then use {isVisible && <input />} in jsx
-  // 2a. Updated date when someone edited by passing the date state and property/key
-  // 3. How would you start putting together a profile picture selector?
-  // My thoughts in dashboard, get 120 pictures for all Champions and upload them to the database.
-  // Select your Champion portrait in the pop-up widg.
-  // On submittion the corresponding url from the database is passed into the update profile pic
-  // method from react
-  //   if (user != null) {
-  //     user.providerData.forEach(function (profile) {
-  //       console.log("  Photo URL: " + profile.photoURL);
-  //   });
-  // }
-
-  // 4. How would you have implemented the CRUD as I have currently just copy and pasted my components
-  //   and specified them for each "thread" of the website
-  //   Would refactor each CRUD component to be used accross the entire application
-  // (Don't repeat yourself)
-
-  // 5. Could you explain whats in the read data component line by line (done)
-
-  // Look into the next 2 weeks
-  // 1. Creating reuseable functions in javascript
-  // 2. Creating reuseable components in react
 
   const updateTitle = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
@@ -43,20 +19,6 @@ export default function TmPost({ post }) {
     postRef.update({ content, date: date.toLocaleDateString() });
     window.location.reload();
   };
-  // const updatePost = () => {
-  //   const postRef = firebase.database().ref("TmPost").child(post.id);
-  //   if (title === "") {
-  //     return post.title;
-  //   } else {
-  //     postRef.update({ title, date: date.toLocaleDateString() });
-  //   }
-  //   if (content === "") {
-  //     return post.content;
-  //   } else {
-  //     postRef.update({ content, date: date.toLocaleDateString() });
-  //     // window.location.reload();
-  //   }
-  // };
 
   const deletePost = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
@@ -66,7 +28,6 @@ export default function TmPost({ post }) {
 
   return (
     <>
-      {/* <button style={{ height: 200 }} onClick={user}></button> */}
       <div className="post-contents">
         <h1>{post?.title}</h1>
         <h2> {post?.content}</h2>
@@ -111,7 +72,7 @@ export default function TmPost({ post }) {
                 onChange={(event) => setContent(event.target.value)}
                 value={content}
               />
-              <button onClick={updateContent}>Update Post</button>
+              <button onClick={updateContent}>Update Content</button>
             </aside>
           </>
         )}

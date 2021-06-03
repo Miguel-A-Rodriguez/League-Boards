@@ -2,8 +2,8 @@ import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
 import "../css/discussion.css";
+import "../css/thread.css";
 import Logo from "../images/logo.jpg";
-
 function Support() {
   return (
     <>
@@ -18,7 +18,7 @@ function Support() {
           <title>LOLjp.gg</title>
         </head>
         <body>
-          <div className="discussion-container">
+          <div className="thread-container">
             <header>
               <nav>
                 {/* need onlick for this div to be the home button  */}
@@ -29,28 +29,29 @@ function Support() {
                 </Link>
               </nav>
             </header>
-
-            <section className="discussion-items-container">
-              <Link to="support-matchups">
-                <div className="discussion-items-container__matchups">
-                  Support Matchups
-                </div>
-              </Link>
-              <Link to="support-builds">
-                <div className="discussion-items-container__builds">
-                  Support Champion Builds
-                </div>
-              </Link>
-              <Link to="support-teams">
-                <div className="discussion-items-container__team">
-                  Support Looking For Team
-                </div>
-              </Link>
-              <Link to="support-talk">
-                <div className="discussion-items-container__talk">
-                  Support Free Talk
-                </div>
-              </Link>
+            <section className="thread-items-container">
+              <ul>
+                <Link to="support-matchups">
+                  <li className="discussion-items-container__matchups">
+                    Support Matchups
+                  </li>
+                </Link>
+                <Link to="support-builds">
+                  <li className="discussion-items-container__builds">
+                    Support Champion Builds
+                  </li>
+                </Link>
+                <Link to="support-teams">
+                  <li className="discussion-items-container__team">
+                    Support Looking For Team
+                  </li>
+                </Link>
+                <Link to="support-talk">
+                  <li className="discussion-items-container__talk">
+                    Support Free Talk
+                  </li>
+                </Link>
+              </ul>
             </section>
           </div>
         </body>

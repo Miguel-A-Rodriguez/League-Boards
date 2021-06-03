@@ -2,8 +2,8 @@ import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
 import "../css/discussion.css";
+import "../css/thread.css";
 import Logo from "../images/logo.jpg";
-
 function Jungle() {
   return (
     <>
@@ -18,7 +18,7 @@ function Jungle() {
           <title>LOLjp.gg</title>
         </head>
         <body>
-          <div className="discussion-container">
+          <div className="thread-container">
             <header>
               <nav>
                 {/* need onlick for this div to be the home button  */}
@@ -29,27 +29,29 @@ function Jungle() {
                 </Link>
               </nav>
             </header>
-            <section className="discussion-items-container">
-              <Link to="jungle-matchups">
-                <div className="discussion-items-container__matchups">
-                  Jungle Matchups
-                </div>
-              </Link>
-              <Link to="jungle-builds">
-                <div className="discussion-items-container__builds">
-                  Jungle Champion Builds
-                </div>
-              </Link>
-              <Link to="jungle-teams">
-                <div className="discussion-items-container__team">
-                  Jungle Looking For Team
-                </div>
-              </Link>
-              <Link to="jungle-talk">
-                <div className="discussion-items-container__talk">
-                  Jungle Free Talk
-                </div>
-              </Link>
+            <section className="thread-items-container">
+              <ul>
+                <Link to="jungle-matchups">
+                  <li className="discussion-items-container__matchups">
+                    Jungle Matchups
+                  </li>
+                </Link>
+                <Link to="jungle-builds">
+                  <li className="discussion-items-container__builds">
+                    Jungle Champion Builds
+                  </li>
+                </Link>
+                <Link to="jungle-teams">
+                  <li className="discussion-items-container__team">
+                    Jungle Looking For Team
+                  </li>
+                </Link>
+                <Link to="jungle-talk">
+                  <li className="discussion-items-container__talk">
+                    Jungle Free Talk
+                  </li>
+                </Link>
+              </ul>
             </section>
           </div>
         </body>

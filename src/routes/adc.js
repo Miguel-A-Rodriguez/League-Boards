@@ -2,8 +2,8 @@ import React from "react";
 //import img from './images';//
 import { Link } from "react-router-dom";
 import "../css/discussion.css";
+import "../css/thread.css";
 import Logo from "../images/logo.jpg";
-
 function Adc() {
   return (
     <>
@@ -18,7 +18,7 @@ function Adc() {
           <title>LOLjp.gg</title>
         </head>
         <body>
-          <div className="discussion-container">
+          <div className="thread-container">
             <header>
               <nav>
                 {/* need onlick for this div to be the home button  */}
@@ -29,29 +29,29 @@ function Adc() {
                 </Link>
               </nav>
             </header>
-            <section className="discussion-items-container">
-              <Link to="adc-matchups">
-                <div className="discussion-items-container__matchups">
-                  ADC Matchups
-                </div>
-              </Link>
-
-              <Link to="adc-builds">
-                <div className="discussion-items-container__builds">
-                  ADC Champion Builds
-                </div>
-              </Link>
-
-              <Link to="adc-teams">
-                <div className="discussion-items-container__team">
-                  ADC Looking For Team
-                </div>
-              </Link>
-              <Link to="adc-talk">
-                <div className="discussion-items-container__talk">
-                  ADC Free Talk
-                </div>
-              </Link>
+            <section className="thread-items-container">
+              <ul>
+                <Link to="adc-matchups">
+                  <li className="discussion-items-container__matchups">
+                    Adc Matchups
+                  </li>
+                </Link>
+                <Link to="adc-builds">
+                  <li className="discussion-items-container__builds">
+                    Adc Champion Builds
+                  </li>
+                </Link>
+                <Link to="adc-teams">
+                  <li className="discussion-items-container__team">
+                    Adc Looking For Team
+                  </li>
+                </Link>
+                <Link to="adc-talk">
+                  <li className="discussion-items-container__talk">
+                    Adc Free Talk
+                  </li>
+                </Link>
+              </ul>
             </section>
           </div>
         </body>

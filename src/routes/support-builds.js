@@ -1,6 +1,8 @@
-import React from "react";
 //import img from './images';//
+
 import { Link } from "react-router-dom";
+import SbCreateThread from "../components/CRUD-Components/Sb-CRUD/SbCreateThread";
+import SbReadData from "../components/CRUD-Components/Sb-CRUD/SbReadData";
 import "../css/discussion.css";
 import Logo from "../images/logo.jpg";
 
@@ -19,21 +21,24 @@ function SupportBuilds() {
         </head>
         <body>
           <div className="discussion-container">
-            <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
-            </header>
-            <section>
-              <div>Recent Posts</div>
+            <nav>
+              <Link to="/">
+                <div class="home-logo">
+                  <img src={Logo} alt="" />
+                </div>
+              </Link>
+            </nav>
+
+            <section className="discussion-headers">
+              <div>Support Builds</div>
             </section>
-            <article>
-              <input type="text" />
+            <article className="discussion-post-container">
+              <section>
+                <SbReadData />
+                <div>
+                  <SbCreateThread />
+                </div>
+              </section>
             </article>
           </div>
         </body>
