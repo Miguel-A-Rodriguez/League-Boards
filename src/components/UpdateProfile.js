@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button, Card, Form } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
+import "../css/dashboard.css";
 import Logo from "../images/logo.jpg";
 
 export default function UpdateProfile() {
@@ -50,7 +51,7 @@ export default function UpdateProfile() {
           <img style={{ height: 100 }} src={Logo} alt="" />
         </div>
       </Link>
-      <Card style={{ width: 500 }}>
+      <Card className="update-profile-container" style={{ width: 500 }}>
         <Card.Body>
           <h2 className="text-center mb-4 ">Update Profile</h2>
 

@@ -1,0 +1,60 @@
+.profile-picture-container {
+  display: flex;
+  justify-content: center;
+}
+.profile-picture-container img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+}
+.email-form {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.email-form p {
+  margin-right: 15px;
+}
+/* section {
+  border: solid 1px grey;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding-bottom: 20px;
+} */
+.dashboard-container button {
+  margin-top: 10px;
+  width: 300px;
+  border: black 1px solid;
+}
+.update-profile-button {
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: white;
+  padding-left: 105px;
+  padding-right: 105px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 20px;
+}
+.logout-button {
+  text-align: center;
+  margin-top: 20px;
+}
+.logout-button button {
+  padding-left: 130px;
+  padding-right: 125px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* updateprofile page */
+.update-profile-container {
+  margin-left: auto;
+  margin-right: auto;
+}
