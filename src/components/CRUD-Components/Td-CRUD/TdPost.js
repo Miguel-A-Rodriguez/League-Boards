@@ -8,7 +8,22 @@ export default function TdPost({ post }) {
   const [content, setContent] = useState("");
   const [date] = useState(new Date());
   const [visible, setVisible] = useState(false);
+  const [hide, setHide] = useState(true);
+  const user = firebase.auth().currentUser;
+  const [photo] = useState(currentUser.photoURL);
 
+  if (user != null) {
+    console.log(currentUser.photoURL);
+  }
+
+  const updatePhoto = () => {
+    const postRef = firebase.database().ref("TdPost").child(post.id);
+    if (post?.photo !== currentUser.photoURL) {
+      postRef.update({ photo });
+    }
+  };
+
+  // post?.photo !== currentUser.photoURL ? updatePhoto : post?.photo;
   const updateTitle = () => {
     const postRef = firebase.database().ref("TdPost").child(post.id);
     postRef.update({ title, date: date.toLocaleDateString() });
@@ -31,6 +46,29 @@ export default function TdPost({ post }) {
       <div className="post-contents">
         <h1>{post?.title}</h1>
         <h2> {post?.content}</h2>
+        <div>
+          <img src={post?.photo} alt="" />
+        </div>
+        {/* Have no idea how this is running my updatePhoto function without a click */}
+        {hide && (
+          <button
+            style={{ display: "none" }}
+            className={
+              currentUser.displayName !== post?.displayName
+                ? "hidden"
+                : "!hidden"
+            }
+            onClick={
+              currentUser.displayName === post?.displayName
+                ? updatePhoto()
+                : () => setHide(false)
+
+              // currentUser.displayName === post?.displayName ? updatePhoto : null
+            }
+          >
+            Update Profile Picture
+          </button>
+        )}
         <h3>Posted by: {post?.displayName}</h3>
         <h4>Posted on:</h4>
         <h5>{post?.date}</h5>

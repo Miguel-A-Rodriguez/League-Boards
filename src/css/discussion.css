@@ -19,7 +19,8 @@ body {
 /* page title */
 .discussion-headers {
   text-align: center;
-  font-size: 24px;
+  font-size: 36px;
+  font-weight: bolder;
   color: white;
   margin-bottom: 2rem;
 }

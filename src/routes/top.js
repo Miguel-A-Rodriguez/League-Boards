@@ -1,13 +1,17 @@
 import React from "react";
 //import img from './images';//
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
+import { useAuth } from "../contexts/AuthContext";
 import "../css/discussion.css";
 import "../css/thread.css";
 import Logo from "../images/logo.jpg";
 
 function Top() {
+  const { currentUser } = useAuth();
   return (
     <>
+      {/* redirects to login if the person is not logged in */}
+      {currentUser ? <Link to="./top" /> : <Redirect to="/login" />}
       <html lang="en">
         <head>
           <meta charset="UTF-8" />

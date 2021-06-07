@@ -30,7 +30,7 @@ function MidTalk() {
             </nav>
 
             <section className="discussion-headers">
-              <div>Mid Teams </div>
+              <div>Mid Talk </div>
             </section>
             <article className="discussion-post-container">
               <section>

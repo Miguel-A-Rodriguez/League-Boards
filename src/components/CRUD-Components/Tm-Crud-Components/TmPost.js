@@ -15,11 +15,7 @@ export default function TmPost({ post }) {
   if (user != null) {
     console.log(currentUser.photoURL);
   }
-  // In order to update the imgage url in the node we must store current user url in
-  // a constant.
-  // Then we create an if check to see if currentUser photoURL is equal to the url in the node
-  // if it is not equal to that of which is in the Node, we call the updatePhoto function
-  // and pass photo
+
   const updatePhoto = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     if (post?.photo !== currentUser.photoURL) {
@@ -57,6 +53,7 @@ export default function TmPost({ post }) {
         <div>
           <img src={post?.photo} alt="" />
         </div>
+        {/* Have no idea how this is running my updatePhoto function without a click */}
         {hide && (
           <button
             style={{ display: "none" }}

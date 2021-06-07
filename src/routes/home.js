@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../css/discussion.css";
 import "../css/home.css";
 import Logo from "../images/logo.jpg";
+
 function Home() {
   return (
     <>

@@ -6,9 +6,11 @@ import "../../../css/discussion.css";
 export default function TtCreateThread() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const user = firebase.auth().currentUser;
+  const [photo] = useState(user.photoURL);
   const { currentUser } = useAuth();
-  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const [date, setDate] = useState(new Date());
+  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   useEffect(() => {
     const timer = setInterval(() => setDate(new Date()), 1000);
@@ -25,6 +27,7 @@ export default function TtCreateThread() {
       date: date.toLocaleDateString(),
       email: currentUser.email,
       displayName: currentUser.displayName,
+      photo,
     };
     console.log(date);
     postRef.push(post);

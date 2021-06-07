@@ -36,12 +36,16 @@ export default function DashBoard() {
       </Link>
       <div></div>
       <section>
-        <Card class="dashboard-container">
-          <Card.Body>
+        <Card>
+          <Card.Body class="dashboard-container">
             <h2 className="text-center mb-4 ">Profile</h2>
             {error && <div style={{ color: "red" }}>{error}</div>}
             <div class="profile-picture-container">
               <ProfilePicture />
+            </div>
+            <div class="email-form">
+              <p>Display Name:</p>
+              {currentUser.displayName}
             </div>
             <div className="email-form">
               <p>Email:</p>

@@ -55,7 +55,9 @@ const ProfilePicture = () => {
       <br />
       <img src={user ? user.photoURL : null} alt="profile-pic" />
       <input type="file" onChange={handleChange} />
-      <button onClick={handleUpload}>Upload </button>
+      <button style={{ marginTop: "10px" }} onClick={handleUpload}>
+        Upload{" "}
+      </button>
     </div>
   );
 };
