@@ -98,6 +98,7 @@ export default function TtPost({ post }) {
           <>
             <aside className="post-buttons">
               <input
+                placeholder="Title"
                 type="text"
                 onChange={(event) => setTitle(event.target.value)}
                 value={title}
@@ -105,11 +106,14 @@ export default function TtPost({ post }) {
               <button onClick={updateTitle}>Update Title</button>
             </aside>
             <aside class="post-buttons">
-              <input
-                type="text"
+              <textarea
+                placeholder="Content"
+                wrap="hard"
+                rows="5"
+                cols="33"
                 onChange={(event) => setContent(event.target.value)}
                 value={content}
-              />
+              ></textarea>
               <button onClick={updateContent}>Update Content</button>
             </aside>
           </>

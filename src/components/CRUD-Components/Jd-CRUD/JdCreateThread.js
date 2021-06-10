@@ -6,9 +6,11 @@ import "../../../css/discussion.css";
 export default function JdCreateThread() {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
+  const user = firebase.auth().currentUser;
+  const [photo] = useState(user.photoURL);
   const { currentUser } = useAuth();
-  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   const [date, setDate] = useState(new Date());
+  //  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   useEffect(() => {
     const timer = setInterval(() => setDate(new Date()), 1000);
@@ -25,6 +27,7 @@ export default function JdCreateThread() {
       date: date.toLocaleDateString(),
       email: currentUser.email,
       displayName: currentUser.displayName,
+      photo,
     };
     console.log(date);
     postRef.push(post);
@@ -33,16 +36,20 @@ export default function JdCreateThread() {
     <>
       <div className="post-creation-items">
         <input
+          placeholder="Title"
           type="text"
           onChange={(event) => setTitle(event.target.value)}
           value={title}
         />
 
-        <input
-          type="text"
+        <textarea
+          placeholder="Content"
+          wrap="hard"
+          rows="5"
+          cols="33"
           onChange={(event) => setContent(event.target.value)}
           value={content}
-        />
+        ></textarea>
         <button id="post-button" onClick={createPost}>
           Add post
         </button>

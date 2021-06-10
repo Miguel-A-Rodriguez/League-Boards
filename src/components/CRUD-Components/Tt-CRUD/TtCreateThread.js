@@ -36,16 +36,20 @@ export default function TtCreateThread() {
     <>
       <div className="post-creation-items">
         <input
+          placeholder="Title"
           type="text"
           onChange={(event) => setTitle(event.target.value)}
           value={title}
         />
 
-        <input
-          type="text"
+        <textarea
+          placeholder="Content"
+          wrap="hard"
+          rows="5"
+          cols="33"
           onChange={(event) => setContent(event.target.value)}
           value={content}
-        />
+        ></textarea>
         <button id="post-button" onClick={createPost}>
           Add post
         </button>

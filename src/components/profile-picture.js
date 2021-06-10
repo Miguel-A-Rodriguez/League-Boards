@@ -53,13 +53,29 @@ const ProfilePicture = () => {
   return (
     <div class="photo-selector-container">
       <br />
-      <img src={user ? user.photoURL : null} alt="profile-pic" />
+      {/* <img
+        src="https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983"
+        alt="profile-pic"
+      /> */}
+      <img
+        src={
+          user.photoURL
+            ? user.photoURL
+            : "https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983"
+        }
+        alt="profile-pic"
+      />
+      {/* <img src={user ? user.photoURL : null} alt="profile-pic" /> */}
       <input type="file" onChange={handleChange} />
-      <button style={{ marginTop: "10px" }} onClick={handleUpload}>
-        Upload{" "}
+      <button
+        style={{ marginTop: "10px" }}
+        onClick={image ? handleUpload : null}
+      >
+        Set Profile Picture
       </button>
     </div>
   );
 };
 export default ProfilePicture;
 // render(<ProfilePicture />), document.querySelector("#root");
+// why is this not needed?
