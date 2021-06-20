@@ -49,7 +49,11 @@ export default function MtCreateThread() {
           onChange={(event) => setContent(event.target.value)}
           value={content}
         ></textarea>
-        <button id="post-button" onClick={createPost}>
+        <button
+          disabled={title == "" || content == "" ? true : false}
+          id="post-button"
+          onClick={createPost}
+        >
           Add post
         </button>
       </div>

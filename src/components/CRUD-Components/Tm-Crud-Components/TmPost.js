@@ -27,24 +27,17 @@ export default function TmPost({ post }) {
   const updateTitle = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.update({ title, date: date.toLocaleDateString() });
-    window.location.reload();
   };
   const updateContent = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.update({ content, date: date.toLocaleDateString() });
-    window.location.reload();
   };
 
   const deletePost = () => {
     const postRef = firebase.database().ref("TmPost").child(post.id);
     postRef.remove();
-    window.location.reload();
   };
-  // if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-  //   updatePhoto();
-  // } else {
-  //   console.info("This page is not reloaded");
-  // }
+
   return (
     <>
       <div className="post-contents">

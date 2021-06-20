@@ -8,11 +8,11 @@ import ProfilePicture from "../components/profile-picture";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/dashboard.css";
 import Logo from "../images/logo.jpg";
-
 export default function DashBoard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
+
   // To create a file upload component use the file upload library called react dropzone
   // Can just pass the htts link from other website to firebase but not proper way
   async function handleLogout() {

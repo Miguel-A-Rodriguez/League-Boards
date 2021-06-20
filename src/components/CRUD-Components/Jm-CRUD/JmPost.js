@@ -27,18 +27,15 @@ export default function JmPost({ post }) {
   const updateTitle = () => {
     const postRef = firebase.database().ref("JmPost").child(post.id);
     postRef.update({ title, date: date.toLocaleDateString() });
-    window.location.reload();
   };
   const updateContent = () => {
     const postRef = firebase.database().ref("JmPost").child(post.id);
     postRef.update({ content, date: date.toLocaleDateString() });
-    window.location.reload();
   };
 
   const deletePost = () => {
     const postRef = firebase.database().ref("JmPost").child(post.id);
     postRef.remove();
-    window.location.reload();
   };
 
   return (

@@ -19,30 +19,22 @@ function Home() {
         </head>
         <body>
           <div className="home-container">
-            <header>
+            <header className="home-header">
               <nav>
                 <div className="home-image">
                   <img src={Logo} alt="" />
                 </div>
               </nav>
-              <Link to="/signup">
-                <div
-                  className="sign-up-link"
-                  style={{
-                    color: "white",
-                    marginTop: "1rem",
-                    marginRight: "1rem",
-                    fontSize: "18px",
-                    fontWeight: "bolder",
-                  }}
-                >
-                  Sign Up/Login
-                </div>
-              </Link>
+              <section className="nav-links">
+                <Link to="/signup">
+                  <p className="dashboard-link">Sign Up/Login</p>
+                </Link>
+                <Link to="/dashboard">
+                  <p className="dashboard-link">Dashboard</p>
+                </Link>
+              </section>
             </header>
-            <Link to="/dashboard">
-              <div className="dashboard-link">Dashboard</div>
-            </Link>
+
             <section className="home-items-container">
               <Link to="./top">
                 <div>Top</div>

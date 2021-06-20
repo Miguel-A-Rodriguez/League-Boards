@@ -7,6 +7,8 @@ const ProfilePicture = () => {
   const [url, setUrl] = useState("");
 
   const user = firebase.auth().currentUser;
+  // useeffect dosent seem to change the currently rendered photo on the page
+  // React.useEffect(() => {}, [user]);
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -41,6 +43,7 @@ const ProfilePicture = () => {
               })
               .then(function () {
                 window.location.reload();
+                // console.log(user.photoURL);
               })
               .catch(function (error) {
                 console.log("an error occured setting the user ");
@@ -53,10 +56,7 @@ const ProfilePicture = () => {
   return (
     <div class="photo-selector-container">
       <br />
-      {/* <img
-        src="https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983"
-        alt="profile-pic"
-      /> */}
+
       <img
         src={
           user.photoURL

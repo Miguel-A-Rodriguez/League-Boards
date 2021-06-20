@@ -14,6 +14,10 @@ a:hover,
 a:active {
   text-decoration: none;
 }
+p {
+  margin: 0;
+  padding: 0;
+}
 body {
   width: 100%;
   height: auto;
@@ -24,11 +28,13 @@ body {
   background-size: cover;
 }
 
-header {
+.home-header {
   display: flex;
   width: 100%;
   height: auto;
   justify-content: space-between;
+  background-color: white;
+  box-shadow: 0 8px 6px -6px rgb(32, 32, 32);
 }
 nav {
   justify-content: right;
@@ -37,10 +43,25 @@ nav {
 }
 /* need a responsive solution */
 nav img {
-  width: 20%;
-  height: 10vh;
+  max-width: 100%;
+  height: auto;
+  min-height: 60px;
+  max-width: 60px;
 }
-
+.nav-links {
+  display: flex;
+  padding-top: 10px;
+  font-size: 18px;
+  margin-right: 1rem;
+  margin-top: 0.7rem;
+}
+.nav-links a {
+  margin-right: 1rem;
+  color: black;
+}
+.nav-links a:hover {
+  color: rgb(167, 162, 162);
+}
 .home-items-container {
   display: flex;
   font-size: 32px;
@@ -68,15 +89,12 @@ nav img {
 .signup-container {
   display: flex;
 }
-header .home-container .sign-up-link {
+.home-header .home-container .sign-up-link {
   color: white;
   margin-top: 1rem;
 }
-.dashboard-link {
-  color: white;
+/* .dashboard-link {
   display: flex;
-  justify-content: flex-end;
   font-size: 18px;
-  font-weight: bolder;
   margin-right: 1rem;
-}
+} */

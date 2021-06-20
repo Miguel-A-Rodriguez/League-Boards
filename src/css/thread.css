@@ -2,6 +2,7 @@
   background-repeat: no-repeat;
   background-image: url("../images/backdrop.jpg");
   background-size: cover;
+  min-height: 100vh;
 }
 .thread-items-container {
   display: flex;

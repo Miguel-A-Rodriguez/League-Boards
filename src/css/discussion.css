@@ -12,10 +12,15 @@ h2 {
   /* width: 100vw; */
   /* height: 100vh; */
   /* background-position: top center; */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat center center fixed; */
   background-image: url("../images/backdrop.jpg");
-  background-size: cover;
-  min-height: 1000px;
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  background-repeat: no-repeat cover;
+  background-attachment: fixed;
+  min-height: 1250px;
 }
 
 /* page title */
@@ -82,3 +87,7 @@ textarea {
   margin-top: 20px;
   border-radius: 2px;
 }
+
+/* #post-button {
+  background: white;
+} */

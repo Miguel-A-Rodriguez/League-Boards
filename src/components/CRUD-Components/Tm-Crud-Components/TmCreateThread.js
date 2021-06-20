@@ -4,6 +4,7 @@ import { useAuth } from "../../../contexts/AuthContext";
 import "../../../css/discussion.css";
 
 export default function TmCreateThread() {
+  // "" === true ? "" : null
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const user = firebase.auth().currentUser;
@@ -32,6 +33,7 @@ export default function TmCreateThread() {
     };
     console.log(date);
     postRef.push(post);
+    // window.location.reload();
   };
   return (
     <>
@@ -51,7 +53,12 @@ export default function TmCreateThread() {
           onChange={(event) => setContent(event.target.value)}
           value={content}
         ></textarea>
-        <button id="post-button" onClick={createPost}>
+        {/* disabled={title || content === "" ? true : false} */}
+        <button
+          disabled={title == "" || content == "" ? true : false}
+          id="post-button"
+          onClick={createPost}
+        >
           Add post
         </button>
       </div>
