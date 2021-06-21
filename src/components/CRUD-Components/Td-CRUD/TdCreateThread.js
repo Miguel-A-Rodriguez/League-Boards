@@ -51,7 +51,7 @@ export default function TdCreateThread() {
           value={content}
         ></textarea>
         <button
-          disabled={title == "" || content == "" ? true : false}
+          disabled={title === "" || content === "" ? true : false}
           id="post-button"
           onClick={createPost}
         >

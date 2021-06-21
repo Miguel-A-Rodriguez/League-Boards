@@ -1,10 +1,10 @@
 import React from "react";
 //import img from './images';//
 import { Link, Redirect } from "react-router-dom";
+import Nav from "../components/Nav";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/discussion.css";
 import "../css/thread.css";
-import Logo from "../images/logo.jpg";
 function Jungle() {
   const { currentUser } = useAuth();
   return (
@@ -24,14 +24,7 @@ function Jungle() {
         <body>
           <div className="thread-container">
             <header>
-              <nav>
-                {/* need onlick for this div to be the home button  */}
-                <Link to="/">
-                  <div>
-                    <img src={Logo} alt="" />
-                  </div>
-                </Link>
-              </nav>
+              <Nav />
             </header>
             <section className="thread-items-container">
               <ul>

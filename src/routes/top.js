@@ -1,11 +1,10 @@
 import React from "react";
 //import img from './images';//
 import { Link, Redirect } from "react-router-dom";
+import Nav from "../components/Nav";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/discussion.css";
 import "../css/thread.css";
-import Logo from "../images/logo.jpg";
-
 function Top() {
   const { currentUser } = useAuth();
   return (
@@ -24,14 +23,14 @@ function Top() {
         </head>
         <body>
           <div className="thread-container">
-            <nav>
-              {/* need onlick for this div to be the home button  */}
+            {/* <nav>
               <Link to="/">
                 <div>
                   <img src={Logo} alt="" />
                 </div>
               </Link>
-            </nav>
+            </nav> */}
+            <Nav />
             <section className="thread-items-container">
               <ul>
                 <li>

@@ -54,6 +54,8 @@ export default function Signup() {
     user
       .updateProfile({
         displayName: displayNameRef.current.value,
+        photoURL:
+          "https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983",
       })
       .then(function () {
         console.log("succeded in making name!");

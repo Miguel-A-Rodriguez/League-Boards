@@ -1,9 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
 import "../css/home.css";
-import Logo from "../images/logo.jpg";
-
 function Home() {
   return (
     <>
@@ -19,7 +18,7 @@ function Home() {
         </head>
         <body>
           <div className="home-container">
-            <header className="home-header">
+            {/* <header className="home-header">
               <nav>
                 <div className="home-image">
                   <img src={Logo} alt="" />
@@ -33,7 +32,8 @@ function Home() {
                   <p className="dashboard-link">Dashboard</p>
                 </Link>
               </section>
-            </header>
+            </header> */}
+            <Nav />
 
             <section className="home-items-container">
               <Link to="./top">

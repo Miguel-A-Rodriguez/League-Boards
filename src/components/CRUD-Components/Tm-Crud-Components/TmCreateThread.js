@@ -55,7 +55,7 @@ export default function TmCreateThread() {
         ></textarea>
         {/* disabled={title || content === "" ? true : false} */}
         <button
-          disabled={title == "" || content == "" ? true : false}
+          disabled={title === "" || content === "" ? true : false}
           id="post-button"
           onClick={createPost}
         >
