@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import SdCreateThread from "../components/CRUD-Components/Sd-CRUD/SdCreateThread";
 import SdReadData from "../components/CRUD-Components/Sd-CRUD/SdReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function SupportTalk() {
   return (
@@ -21,13 +20,7 @@ function SupportTalk() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Support Talk</div>

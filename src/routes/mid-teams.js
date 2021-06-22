@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import MtCreateThread from "../components/CRUD-Components/Mt-CRUD/MtCreateThread";
 import MtReadData from "../components/CRUD-Components/Mt-CRUD/MtReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function MidTeams() {
   return (
@@ -21,13 +20,7 @@ function MidTeams() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Mid Teams </div>

@@ -1,11 +1,10 @@
 //import img from './images';//
 
 import { default as React } from "react";
-import { Link } from "react-router-dom";
 import JtCreateThread from "../components/CRUD-Components/Jt-CRUD/JtCreateThread";
 import JtReadData from "../components/CRUD-Components/Jt-CRUD/JtReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function JungleTeams() {
   return (
@@ -22,13 +21,7 @@ function JungleTeams() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Jungle Teams</div>

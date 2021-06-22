@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import TdCreateThread from "../components/CRUD-Components/Td-CRUD/TdCreateThread";
 import TdReadData from "../components/CRUD-Components/Td-CRUD/TdReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function TopTalk() {
   return (
@@ -21,13 +20,7 @@ function TopTalk() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Top Talk</div>

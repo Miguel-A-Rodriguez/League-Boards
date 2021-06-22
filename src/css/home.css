@@ -53,7 +53,6 @@ nav img {
   display: flex;
   padding-top: 10px;
   font-size: 18px;
-  margin-right: 1rem;
   margin-top: 0.7rem;
 }
 .nav-links a {
@@ -62,6 +61,9 @@ nav img {
 }
 .nav-links a:hover {
   color: rgb(167, 162, 162);
+}
+.nav-links ul {
+  justify-content: space-between;
 }
 .home-items-container {
   display: flex;
@@ -94,8 +96,6 @@ nav img {
   color: white;
   margin-top: 1rem;
 }
-/* .dashboard-link {
-  display: flex;
-  font-size: 18px;
-  margin-right: 1rem;
-} */
+.dashboard-link{
+  margin-right: 10px;
+}

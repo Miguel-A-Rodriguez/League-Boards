@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import MbCreateThread from "../components/CRUD-Components/Mb-CRUD/MbCreateThread";
 import MbReadData from "../components/CRUD-Components/Mb-CRUD/MbReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function MidBuilds() {
   return (
@@ -21,13 +20,7 @@ function MidBuilds() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Mid Builds</div>

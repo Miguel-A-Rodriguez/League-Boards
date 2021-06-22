@@ -1,11 +1,10 @@
 //import img from './images';//
 
 import { default as React } from "react";
-import { Link } from "react-router-dom";
 import JmCreateThread from "../components/CRUD-Components/Jm-CRUD/JmCreateThread";
 import JmReadData from "../components/CRUD-Components/Jm-CRUD/JmReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function JungleMatchups() {
   return (
@@ -22,13 +21,7 @@ function JungleMatchups() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Jungle Matchups</div>

@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import SbCreateThread from "../components/CRUD-Components/Sb-CRUD/SbCreateThread";
 import SbReadData from "../components/CRUD-Components/Sb-CRUD/SbReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function SupportBuilds() {
   return (
@@ -21,13 +20,7 @@ function SupportBuilds() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Support Builds</div>

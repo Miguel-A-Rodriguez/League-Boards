@@ -1,10 +1,9 @@
 //import img from './images';//
 
-import { Link } from "react-router-dom";
 import MmCreateThread from "../components/CRUD-Components/Mm-CRUD/MmCreateThread";
 import MmReadData from "../components/CRUD-Components/Mm-CRUD/MmReadData";
+import Nav from "../components/Nav";
 import "../css/discussion.css";
-import Logo from "../images/logo.jpg";
 
 function MidMatchups() {
   return (
@@ -21,13 +20,7 @@ function MidMatchups() {
         </head>
         <body>
           <div className="discussion-container">
-            <nav>
-              <Link to="/">
-                <div class="home-logo">
-                  <img src={Logo} alt="" />
-                </div>
-              </Link>
-            </nav>
+            <Nav />
 
             <section className="discussion-headers">
               <div>Mid Matchups</div>
