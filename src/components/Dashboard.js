@@ -29,41 +29,42 @@ export default function DashBoard() {
 
   return (
     <>
-      <Link to="/">
-        <div class="home-logo">
-          <img style={{ height: 100 }} src={Logo} alt="" />
-        </div>
-      </Link>
-      <div></div>
-      <section>
-        <Card>
-          <Card.Body class="dashboard-container">
-            <h2 className="text-center mb-4 ">Profile</h2>
-            {error && <div style={{ color: "red" }}>{error}</div>}
-            <div class="profile-picture-container">
-              <ProfilePicture />
-            </div>
-            <div class="email-form">
-              <p>Display Name:</p>
-              {currentUser.displayName}
-            </div>
-            <div className="email-form">
-              <p>Email:</p>
-              {currentUser.email}
-            </div>
-            <div className="w-300 text-center mt-2">
-              <Link to="/update-profile" className="update-profile-button">
-                Update Profile
-              </Link>
-            </div>
-            <div className="logout-button">
-              <Button className="btn btn-primary mt-3" onClick={handleLogout}>
-                Logout
-              </Button>
-            </div>
-          </Card.Body>
-        </Card>
-      </section>
+      <div className="dashboard-background">
+        <Link to="/">
+          <div class="home-logo">
+            <img src={Logo} alt="" />
+          </div>
+        </Link>
+        <section>
+          <Card>
+            <Card.Body class="dashboard-container">
+              <h2 className="text-center mb-4 ">Profile</h2>
+              {error && <div style={{ color: "red" }}>{error}</div>}
+              <div class="profile-picture-container">
+                <ProfilePicture />
+              </div>
+              <div class="email-form">
+                <p>Display Name:</p>
+                {currentUser.displayName}
+              </div>
+              <div className="email-form">
+                <p>Email:</p>
+                {currentUser.email}
+              </div>
+              <div className="w-300 text-center mt-2">
+                <Link to="/update-profile" className="update-profile-button">
+                  Update Profile
+                </Link>
+              </div>
+              <div className="logout-button">
+                <Button className="btn btn-primary mt-3" onClick={handleLogout}>
+                  Logout
+                </Button>
+              </div>
+            </Card.Body>
+          </Card>
+        </section>
+      </div>
     </>
   );
 }

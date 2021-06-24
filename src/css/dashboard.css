@@ -1,7 +1,40 @@
+.dashboard-background{
+  background-image: url("../images/backdrop.jpg");
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */
+  background-repeat: no-repeat cover;
+  background-attachment: fixed;
+  min-height: 1250px;
+}
+.dashboard-container {
+  border: black 1px solid;
+  max-width: 500px;
+  min-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+
+.dashboard-container h2 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.dashboard-container button {
+  margin-top: 10px;
+  width: 300px;
+  border: black 1px solid;
+}
 .profile-picture-container {
   display: flex;
   justify-content: center;
   height: auto;
+  width: 100%;
+  max-width: 350px;
+  margin-left: auto;
+margin-right: auto;
+padding: 5px;
 }
 .profile-picture-container img {
   width: 100%;
@@ -28,22 +61,7 @@
   height: auto;
   padding-bottom: 20px;
 } */
-.dashboard-container {
-  border: grey 1px solid;
-  max-width: 500px;
-  min-height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.dashboard-container h2 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-.dashboard-container button {
-  margin-top: 10px;
-  width: 300px;
-  border: black 1px solid;
-}
+
 .update-profile-button {
   background-color: #337ab7;
   border-color: #2e6da4;
@@ -53,6 +71,8 @@
   padding-top: 5px;
   padding-bottom: 5px;
   margin-bottom: 20px;
+  border: black 1px solid;
+  border-radius: 5px;
 }
 .logout-button {
   text-align: center;
@@ -65,9 +85,44 @@
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-
+.profile-picture-container button{
+  border: 1px solid black;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: white;
+  border-radius: 5px;
+  border-color: #2e6da4;;
+}
 /* updateprofile page */
 .update-profile-container {
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  margin-top: 50px;
 }
+.home-logo{
+  max-width: 50px;
+  max-height: 50px;
+}
+.home-logo img {
+  max-height: 50px;
+}
+/* ===login===== */
+.login-container{
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  width: 400px;
+  height: auto;
+  margin-top: 50px;
+}
+
+

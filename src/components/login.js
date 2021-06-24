@@ -32,7 +32,7 @@ export default function Login() {
 
   return (
     <>
-      <Card>
+      <Card >
         <Card.Body>
           <h2 className="text-center mb-4 ">Log In</h2>
 
@@ -51,13 +51,13 @@ export default function Login() {
               Login
             </Button>
           </Form>
-          <div className="w-100 text-center mt-3 ">
+          <div className="text-center mt-3 ">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
         </Card.Body>
         <Link to="/signup">
           {" "}
-          <div className="w-100 text-center ">
+          <div className=" text-center ">
             Need an account? Sign up
           </div>{" "}
         </Link>
