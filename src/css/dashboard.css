@@ -1,12 +1,18 @@
+ul {
+  padding: 0;
+  margin: 0;
+}
+
 .dashboard-background{
   background-image: url("../images/backdrop.jpg");
-  /* -webkit-background-size: cover;
+  -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover; */
-  background-repeat: no-repeat cover;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  min-height: 1250px;
+  min-height: 100vh;
+  height: auto;
 }
 .dashboard-container {
   border: black 1px solid;
@@ -40,6 +46,7 @@ padding: 5px;
   width: 100%;
   height: auto;
   max-width: 300px;
+  max-height: 300px;
 }
 .email-form {
   text-align: center;

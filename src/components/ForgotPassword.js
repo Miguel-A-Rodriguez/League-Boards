@@ -32,35 +32,35 @@ export default function ForgotPassword() {
 
   return (
     <>
-      <Link to="/">
-        <div class="home-logo">
-          <img style={{ height: 100 }} src={Logo} alt="" />
-        </div>
-      </Link>
-      <Card style={{ width: 500 }}>
-        <Card.Body>
-          <h2 className="text-center mb-4 ">Password Reset</h2>
-
-          {error && <div style={{ color: "red" }}>{error}</div>}
-          {message && <div style={{ color: "green" }}>{message}</div>}
-          <Form onSubmit={handleSubmit}>
-            <Form.Group>
-              <Form.Label id="email">Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="sign-up-button" type="submit">
-              Reset Password
-            </Button>
-          </Form>
-          <div className="w-50 text-center mt-3 ">
-            <Link to="/login">Login</Link>
+      <div class="dashboard-background">
+        <Link to="/">
+          <div class="home-logo">
+            <img style={{ height: 100 }} src={Logo} alt="" />
           </div>
-        </Card.Body>
-        <Link to="/signup">
-          {" "}
-          <div className="w-50 text-center ">Need an account? Sign up</div>{" "}
         </Link>
-      </Card>
+        <Card className="login-container">
+          <Card.Body>
+            <h2 className="text-center mb-4 ">Password Reset</h2>
+            {error && <div style={{ color: "red" }}>{error}</div>}
+            {message && <div style={{ color: "green" }}>{message}</div>}
+            <Form onSubmit={handleSubmit}>
+              <Form.Group>
+                <Form.Label id="email">Email</Form.Label>
+                <Form.Control type="email" ref={emailRef} required />
+              </Form.Group>
+              <Button disabled={loading} className="sign-up-button" type="submit">
+                Reset Password
+              </Button>
+            </Form>
+            <div style={{marginTop: 15}}className="w-50 text-center mt-3 ">
+              <Link to="/login">Login</Link>
+            </div>
+          </Card.Body>
+          <Link to="/signup">
+            <div className="w-50 text-center ">Need an account? Sign up</div>
+          </Link>
+        </Card>
+      </div>
     </>
   );
 }

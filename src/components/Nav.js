@@ -25,7 +25,7 @@ export default function Nav() {
         <p className="dashboard-link">
             {user ? user.displayName : "Guest"}
         </p>
-        <Link to="/signup">
+        <Link style={{marginLeft: 10}} to="/signup">
            <p className="dashboard-link">{user ? null : "Login/Signup"}</p>
         </Link>
         <Link to="/dashboard">
