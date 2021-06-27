@@ -2,13 +2,14 @@ import firebase from "firebase";
 import React, { useState } from "react";
 import "../css/profilepicture.css";
 
-const ProfilePicture = () => {
+const ProfilePicture = ({currentUser}) => {
   const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
+  const [ _ , setUrl] = useState("");
 
   const user = firebase.auth().currentUser;
   // useeffect dosent seem to change the currently rendered photo on the page
-  // React.useEffect(() => {}, [user]);
+  React.useEffect(() => {console.log("re-rendering...")}, [currentUser.photoUrl]);
+  
 
   const handleChange = (e) => {
     if (e.target.files[0]) {
@@ -42,8 +43,8 @@ const ProfilePicture = () => {
                 photoURL: url,
               })
               .then(function () {
-                window.location.reload();
-                // console.log(user.photoURL);
+                // window.location.reload();
+                console.log(currentUser.photoURL);
               })
               .catch(function (error) {
                 console.log("an error occured setting the user ");
@@ -59,9 +60,10 @@ const ProfilePicture = () => {
 
       <img
         src={
-          user.photoURL
-            ? user.photoURL
-            : "https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983"
+          // user.photoURL
+          //   ? user.photoURL
+          //   : "https://firebasestorage.googleapis.com/v0/b/league-boards.appspot.com/o/images%2Fgolem.jpg?alt=media&token=002001a9-96e0-400e-be1a-2a022f626983"
+          currentUser.photoURL
         }
         alt="profile-pic"
       />

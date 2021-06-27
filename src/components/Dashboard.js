@@ -41,7 +41,7 @@ export default function DashBoard() {
               <h2 className="text-center mb-4 ">Profile</h2>
               {error && <div style={{ color: "red" }}>{error}</div>}
               <div class="profile-picture-container">
-                <ProfilePicture />
+                <ProfilePicture currentUser={currentUser} />
               </div>
               <div class="email-form">
                 <p>Display Name:</p>

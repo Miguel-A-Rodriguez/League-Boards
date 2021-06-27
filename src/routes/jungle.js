@@ -7,6 +7,7 @@ import "../css/discussion.css";
 import "../css/thread.css";
 function Jungle() {
   const { currentUser } = useAuth();
+  console.log(currentUser);
   return (
     <>
       {/* redirects to login if the person is not logged in */}
