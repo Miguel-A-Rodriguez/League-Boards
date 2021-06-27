@@ -8,7 +8,7 @@ const ProfilePicture = ({currentUser}) => {
 
   const user = firebase.auth().currentUser;
   // useeffect dosent seem to change the currently rendered photo on the page
-  React.useEffect(() => {console.log("re-rendering...")}, [currentUser.photoUrl]);
+  // React.useEffect(() => {console.log("re-rendering...")}, [currentUser.photoUrl]);
   
 
   const handleChange = (e) => {
@@ -43,8 +43,8 @@ const ProfilePicture = ({currentUser}) => {
                 photoURL: url,
               })
               .then(function () {
-                // window.location.reload();
-                console.log(currentUser.photoURL);
+                window.location.reload();
+                // console.log(currentUser.photoURL);
               })
               .catch(function (error) {
                 console.log("an error occured setting the user ");
