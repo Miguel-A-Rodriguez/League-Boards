@@ -101,7 +101,7 @@ export default function TbPost({ post }) {
                 onChange={(event) => setTitle(event.target.value)}
                 value={title}
               />
-              <button onClick={updateTitle}>Update Title</button>
+              <button onClick={ () => updateTitle() }>Update Title</button>
             </aside>
             <aside class="post-buttons">
               <textarea
@@ -112,7 +112,7 @@ export default function TbPost({ post }) {
                 onChange={(event) => setContent(event.target.value)}
                 value={content}
               ></textarea>
-              <button onClick={updateContent}>Update Content</button>
+              <button onClick={ () => updateContent() }>Update Content</button>
             </aside>
           </>
         )}
