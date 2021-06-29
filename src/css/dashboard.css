@@ -16,11 +16,14 @@ ul {
 }
 .dashboard-container {
   border: black 1px solid;
-  max-width: 500px;
+  max-width: 400px;
   min-height: 400px;
+  height: auto;
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  margin-top: 20px;
+  word-wrap:break-word;
 }
 
 .dashboard-container h2 {
@@ -45,20 +48,32 @@ padding: 5px;
 .profile-picture-container img {
   width: 100%;
   height: auto;
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 200px;
+  max-height: 200px;
+}
+.set-profile-picture-button:hover{
+  color: black;
+  opacity: 90%;
 }
 .email-form {
   text-align: center;
-  margin-bottom: 10px;
-  font-size: 28px;
-  display: flex;
+  margin-bottom: 15px;
+  font-size: 24px;
+  min-width: 400px;
+  width: 100%;
+  max-width: 400px;
+  /* display: flex; */
   justify-content: center;
   margin-top: 10px;
   font-weight: bold;
+  word-wrap:break-word;
+  overflow-wrap: break-word;
+  text-align: left;
+  padding-left: 2em;
 }
 .email-form p {
   margin-right: 15px;
+  overflow-wrap: break-word;
 }
 /* section {
   border: solid 1px grey;

@@ -48,8 +48,8 @@ export default function DashBoard() {
                 {currentUser.displayName}
               </div>
               <div className="email-form">
-                <p>Email:</p>
-                {currentUser.email}
+                <p>Email: {currentUser.email}</p>
+                
               </div>
               <div className="w-300 text-center mt-2">
                 <Link to="/update-profile" className="update-profile-button">
@@ -64,6 +64,8 @@ export default function DashBoard() {
             </Card.Body>
           </Card>
         </section>
+        <br/>
+        <br/>
       </div>
     </>
   );
