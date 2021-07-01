@@ -46,22 +46,27 @@ margin-right: auto;
 padding: 5px;
 }
 .profile-picture-container img {
+  margin: 0 auto;
   width: 100%;
   height: auto;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
 }
 .set-profile-picture-button:hover{
   color: black;
   opacity: 90%;
 }
+.dashboard-profile-buttons{
+  width: 305px;
+  height: auto;
+  margin: 0 auto;
+}
 .email-form {
   text-align: center;
   margin-bottom: 15px;
   font-size: 24px;
-  min-width: 400px;
   width: 100%;
-  max-width: 400px;
   /* display: flex; */
   justify-content: center;
   margin-top: 10px;
@@ -69,11 +74,11 @@ padding: 5px;
   word-wrap:break-word;
   overflow-wrap: break-word;
   text-align: left;
-  padding-left: 2em;
+  /* padding-left: 2em; */
 }
 .email-form p {
   margin-right: 15px;
-  overflow-wrap: break-word;
+  
 }
 /* section {
   border: solid 1px grey;
@@ -107,15 +112,17 @@ padding: 5px;
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
+.profile-picture-container input:hover{
+  opacity: 90%;
+}
 .profile-picture-container button{
   border: 1px solid black;
   padding-bottom: 10px;
   padding-top: 10px;
   background-color: #337ab7;
-  border-color: #2e6da4;
   color: white;
   border-radius: 5px;
-  border-color: #2e6da4;;
+  width: 100%;
 }
 /* updateprofile page */
 .update-profile-container {

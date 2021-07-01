@@ -67,13 +67,13 @@ const ProfilePicture = ({currentUser}) => {
         alt="profile-pic"
       />
       {/* <img src={user ? user.photoURL : null} alt="profile-pic" /> */}
-      <input type="file" onChange={handleChange} />
-      {/* <label for="img">Click me to upload a 300x300 profile image</label> */}
+      <input type="file" id="img" style={{display: "none"}} onChange={handleChange} />
+      <label for="img">Click me to upload a 300x300 profile image</label>
       <button className="set-profile-picture-button"
         style={{ marginTop: "10px" }}
         onClick={image ? handleUpload : null}
       >
-        Set Profile Picture
+        <b>Set Profile Picture</b>
       </button>
     </div>
   );

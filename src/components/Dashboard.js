@@ -43,6 +43,7 @@ export default function DashBoard() {
               <div class="profile-picture-container">
                 <ProfilePicture currentUser={currentUser} />
               </div>
+            <section className="dashboard-profile-buttons">
               <div class="email-form">
                 <p>Display Name:</p>
                 {currentUser.displayName}
@@ -51,16 +52,18 @@ export default function DashBoard() {
                 <p>Email: {currentUser.email}</p>
                 
               </div>
-              <div className="w-300 text-center mt-2">
-                <Link to="/update-profile" className="update-profile-button">
-                  Update Profile
-                </Link>
-              </div>
-              <div className="logout-button">
-                <Button className="btn btn-primary mt-3" onClick={handleLogout}>
-                  Logout
-                </Button>
-              </div>
+            </section>
+                <div className="w-300 text-center mt-2">
+                  <Link to="/update-profile" className="update-profile-button">
+                    Update Profile
+                  </Link>
+                </div>
+                <div className="logout-button">
+                  <Button className="btn btn-primary mt-3" onClick={handleLogout}>
+                    Logout
+                  </Button>
+                </div>
+            
             </Card.Body>
           </Card>
         </section>
