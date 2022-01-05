@@ -8,6 +8,7 @@ import ProfilePicture from "../components/profile-picture";
 import { useAuth } from "../contexts/AuthContext";
 import "../css/dashboard.css";
 import Logo from "../images/logo.jpg";
+
 export default function DashBoard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();

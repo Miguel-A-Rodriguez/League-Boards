@@ -27,10 +27,31 @@
   text-align: center;
   border-radius: 15px;
   padding: 5%;
+  border: 3px solid #7e651a;
 }
 .thread-items-container a {
   color: black;
 }
 .thread-items-container a:hover {
-  color: rgb(29, 29, 121);
+  color: rgb(39, 39, 39);
+  opacity: 50%;
+}
+
+@media (max-width: 500px) {
+  .thread-items-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  .thread-items-container ul {
+    font-size: 32px;
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+  .thread-items-container ul li {
+    font-size: 6vw;
+  }
 }

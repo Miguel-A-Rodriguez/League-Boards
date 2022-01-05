@@ -6,9 +6,7 @@ import "../css/home.css";
 import Logo from "../images/logo.jpg";
 
 export default function Nav() {
-  
   const user = firebase.auth().currentUser;
-
   return (
     <header className="home-header">
       <Link to="/">

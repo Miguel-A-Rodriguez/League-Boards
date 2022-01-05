@@ -72,7 +72,7 @@ nav img {
   justify-content: center;
   align-items: center;
   color: white;
-  height: 100vh;
+  height: 100%;
 }
 .home-items-container div {
   font-weight: bolder;
@@ -98,4 +98,15 @@ nav img {
 }
 .dashboard-link{
   margin-right: 10px;
+}
+
+@media (max-width: 400px) {
+  .nav-links {
+    font-size: 3.8vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
 }
