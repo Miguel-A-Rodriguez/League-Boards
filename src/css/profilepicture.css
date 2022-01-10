@@ -13,6 +13,6 @@
     width: 100%;
   }
   .photo-selector-container label:hover{
-    opacity: 90%;
+    opacity: .9;
     color: black;
   }

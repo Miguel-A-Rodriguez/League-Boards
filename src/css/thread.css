@@ -34,7 +34,7 @@
 }
 .thread-items-container a:hover {
   color: rgb(39, 39, 39);
-  opacity: 50%;
+  opacity: .9;
 }
 
 @media (max-width: 500px) {

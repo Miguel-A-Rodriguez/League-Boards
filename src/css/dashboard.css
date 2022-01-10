@@ -55,7 +55,7 @@ padding: 5px;
 }
 .set-profile-picture-button:hover{
   color: black;
-  opacity: 90%;
+  opacity: .9;
 }
 .dashboard-profile-buttons{
   width: 305px;
@@ -113,7 +113,7 @@ padding: 5px;
   margin-bottom: 10px;
 }
 .profile-picture-container input:hover{
-  opacity: 90%;
+  opacity: .9;
 }
 .profile-picture-container button{
   border: 1px solid black;
