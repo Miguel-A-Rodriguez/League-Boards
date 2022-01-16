@@ -54,11 +54,13 @@ export default function DashBoard() {
                 
               </div>
             </section>
-                <div className="w-300 text-center mt-2">
-                  <Link to="/update-profile" className="update-profile-button">
-                    Update Profile
-                  </Link>
-                </div>
+                <Link to="/update-profile">
+                  <div className="text-center mt-2 update-profile-button">
+                    <Link to="/update-profile" className="update-profile-button-link">
+                      Update Profile
+                    </Link>
+                  </div>
+                </Link>
                 <div className="logout-button">
                   <Button className="btn btn-primary mt-3" onClick={handleLogout}>
                     Logout
